@@ -1,6 +1,6 @@
 use clap::{App, Arg};
 use std::fs::{self, File};
-use std::io::{self, BufRead, BufReader, StdoutLock, Write};
+use std::io::{self, BufRead, BufReader, StdoutLock, Write, ErrorKind};
 use std::path::PathBuf;
 use std::process::exit;
 
@@ -45,16 +45,19 @@ fn main() {
         print_or_die(&mut stdout, b"No such file or directory");
     }
 
-    cat(file, &mut stdout);
+    if let Err(err) = cat(file, &mut stdout){
+        print_or_die(&mut stdout, b"Something happened");
+    }
 }
 
 fn cat(path: &str, stdout: &mut StdoutLock) -> io::Result<()> {
     let file = PathBuf::from(path);
-    let metadata = fs::metadata(file)?;
-    println!("{:?}", metadata);
+    let metadata = fs::metadata(&file)?;
+    if metadata.is_dir(){
+        return Err(io::Error::new(ErrorKind::Other,"This is a directory"));
+    }
     let file = File::open(file)?;
     let mut reader = BufReader::new(file);
-    //    let mut buf: [u8; 8192] = [0; 8192];
 
     loop {
         let mut line = String::new();
@@ -62,7 +65,7 @@ fn cat(path: &str, stdout: &mut StdoutLock) -> io::Result<()> {
         if num_read == 0 {
             break;
         }
-        stdout.write(line.as_bytes());
+        stdout.write(line.as_bytes())?;
         //        let num_read = file.read(&mut buf)?;
     }
     stdout.flush()?;

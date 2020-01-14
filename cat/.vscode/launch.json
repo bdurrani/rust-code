@@ -9,7 +9,7 @@
       "type": "cppvsdbg",
       "request": "launch",
       "program": "${workspaceFolder}/target/debug/cat.exe",
-      "args": ["testdir"],
+      "args": ["-n", "testdir"],
       "stopAtEntry": false,
       "cwd": "${workspaceFolder}",
       "environment": [],

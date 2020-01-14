@@ -23,6 +23,7 @@ Usage:
     akv_mem FILE update KEY VALUE
 ";
 /// Holds the values of the program input
+#[derive(Debug)]
 struct Program {
     number: bool,
     paths: Vec<String>,
@@ -43,13 +44,25 @@ fn main() {
         Some(val) => val,
         None => "",
     };
-
-    let multiple_files = match matches.values_of("FILE") {
-        Some(val) => val.collect(),
-        None => vec![""; 0],
+    if let Some(c) = matches.value_of("number") {
+        println!("Value for -c: {}", c);
+    } else {
+        println!("no number found");
+    }
+    let multiple_files: Vec<String> = match matches.values_of("FILE") {
+        Some(val) => val.map(String::from).collect(),
+        None => vec!["".to_string(); 0],
     };
 
-    println!("multiple files {:?}", multiple_files);
+    let number = matches.occurrences_of("number") > 0;
+
+    let options = Program {
+        number,
+        paths: multiple_files,
+    };
+
+    println!("command line options {:?}", options);
+    return;
 
     let stdout = io::stdout();
     let mut stdout = stdout.lock();

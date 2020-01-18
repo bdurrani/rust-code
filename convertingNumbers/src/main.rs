@@ -1,4 +1,5 @@
 use std::mem::size_of;
+use std::convert::TryInto;
 
 fn main() {
     let column_width = 10;
@@ -19,15 +20,11 @@ fn main() {
             let le_string: String;
 
             if size == 4 {
-                let mut array: [u8; 4] = [0x20; 4];
-                let raw_bytes = trunc.as_bytes();
-                array.copy_from_slice(&raw_bytes[..4]);
+                let array:[u8;4] = trunc.as_bytes()[..4].try_into().unwrap();
                 be_string = u32::from_be_bytes(array).to_string();
                 le_string = u32::from_le_bytes(array).to_string();
             } else if size == 2 {
-                let mut array: [u8; 2] = [0x20; 2];
-                let raw_bytes = trunc.as_bytes();
-                array.copy_from_slice(&raw_bytes[..2]);
+                let array:[u8;2] = trunc.as_bytes()[..2].try_into().unwrap();
                 be_string = u16::from_be_bytes(array).to_string();
                 le_string = u16::from_le_bytes(array).to_string();
             } else {

@@ -4,7 +4,7 @@ fn main() {
     let column_width = 10;
 
     println!(
-        "{0: <4$} | {1: <4$} | {2: <4$} | {3: <4$}",
+        "{0: <4} | {1: <4$} | {2: <4$} | {3: <4$}",
         "size", "verb", "big-endian", "little-endian", column_width
     );
     for size in vec![size_of::<u16>(), size_of::<u32>()] {
@@ -35,7 +35,7 @@ fn main() {
             }
 
             println!(
-                "{0: <4$} | {1: <4$} | {2: <4$} | {3: <4$}",
+                "{0: <4} | {1: <4$} | {2: <4$} | {3: <4$}",
                 size,
                 item,
                 be_string,

@@ -42,4 +42,3 @@ fn main() {
         }
     }
 }
-//    let num = u32::from_be_bytes(str_data.as_bytes()[..4].try_into().unwrap());

@@ -1,7 +1,6 @@
-use memmap::{MmapMut, MmapOptions};
-use serde::{Deserialize, Serialize};
+use memmap::{ MmapOptions};
+use serde::{Deserialize };
 use std::fs::File;
-use std::io::Read;
 use std::str;
 
 // reference
@@ -18,24 +17,21 @@ fn main() {
     let file = File::open("input.json").unwrap();
     let mmap = unsafe { MmapOptions::new().map(&file).unwrap() };
     let mut contents = str::from_utf8(&mmap[..]).unwrap();
-    let len = contents.len();
     println!("lenght {}", len);
-    match try_parse::<StatemapInputDatum>(&mut contents) {
-        Ok(None) => println!("end of the line"),
-        Ok(Some(datum)) => println!("{:?}", datum),
-        Err(err) => {
-            println!("{}", err);
-        }
-    };
+    loop {
+        match try_parse::<StatemapInputDatum>(&mut contents) {
+            Ok(None) => {
+                println!("end of the line");
+                break;
+            },
+            Ok(Some(datum)) => println!("{:?}", datum),
+            Err(err) => {
+                println!("{}", err);
+                break;
+            }
+        };
 
-    match try_parse::<StatemapInputDatum>(&mut contents) {
-        //        Ok(None) => Ok("no"),
-        Ok(Some(datum)) => println!("{:?}", datum),
-        Ok(None) => println!("end of the line"),
-        Err(err) => {
-            println!("{}", err);
-        }
-    };
+    }
     println!("done");
 }
 

@@ -6,7 +6,7 @@ fn main() {
     //    let file = OpenOptions::new()
     //    .write(true)
     //    .open("new_file.txt").unwrap();
-
+    // 30000000
     for i in 0..300 {
         let time = 20000000000u64 + i;
         let entity = 50000 + i % 1000;

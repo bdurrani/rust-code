@@ -1,5 +1,5 @@
-use memmap::{ MmapOptions};
-use serde::{Deserialize };
+use memmap::MmapOptions;
+use serde::Deserialize;
 use std::fs::File;
 use std::str;
 
@@ -14,7 +14,7 @@ struct StatemapInputDatum {
 }
 
 fn main() {
-    let file = File::open("input.json").unwrap();
+    let file = File::open("file.json").unwrap();
     let mmap = unsafe { MmapOptions::new().map(&file).unwrap() };
     let mut contents = str::from_utf8(&mmap[..]).unwrap();
     loop {
@@ -22,14 +22,13 @@ fn main() {
             Ok(None) => {
                 println!("end of the line");
                 break;
-            },
+            }
             Ok(Some(datum)) => println!("{:?}", datum),
             Err(err) => {
                 println!("{}", err);
                 break;
             }
         };
-
     }
     println!("done");
 }

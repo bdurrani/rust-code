@@ -17,7 +17,6 @@ fn main() {
     let file = File::open("input.json").unwrap();
     let mmap = unsafe { MmapOptions::new().map(&file).unwrap() };
     let mut contents = str::from_utf8(&mmap[..]).unwrap();
-    println!("lenght {}", len);
     loop {
         match try_parse::<StatemapInputDatum>(&mut contents) {
             Ok(None) => {

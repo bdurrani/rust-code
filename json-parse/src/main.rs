@@ -10,7 +10,8 @@ use std::str::FromStr;
 
 #[derive(Deserialize, Debug)]
 struct StatemapInputDatum {
-    time: String,   // time of this datum
+    #[serde(deserialize_with = "datum_time_from_string")]
+    time: u64, // time of this datum
     entity: String, // name of entity
     state: u32,     // state entity is in at time
 }
@@ -27,11 +28,7 @@ fn main() {
                 break;
             }
             Ok(Some(datum)) => {
-                let time: u64;
-                match <u64>::from_str(&datum.time) {
-                    Ok(t) => time = t,
-                    _ => (),
-                }
+                let time = datum.time;
                 ()
             }
             Err(err) => {
@@ -55,5 +52,20 @@ where
         }
         Some(Err(err)) => Err(err),
         None => Ok(None),
+    }
+}
+
+/*
+ * The time value is written in the input as a JSON string containing a number.
+ * Deserialize just the number here without allocating memory for a String.
+ */
+fn datum_time_from_string<'de, D>(deserializer: D) -> Result<u64, D::Error>
+where
+    D: serde::Deserializer<'de>,
+{
+    let s: &str = serde::Deserialize::deserialize(deserializer)?;
+    match u64::from_str(s) {
+        Ok(time) => Ok(time),
+        Err(_) => Err(serde::de::Error::custom("illegal time value")),
     }
 }

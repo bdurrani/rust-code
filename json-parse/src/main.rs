@@ -2,6 +2,7 @@ use memmap::MmapOptions;
 use serde::Deserialize;
 use std::fs::File;
 use std::str;
+use std::io;
 
 // reference
 // https://github.com/joyent/statemap/blob/81b7c44c2edb9b9036324e152b1a7fde945b4e82/src/statemap.rs
@@ -23,7 +24,10 @@ fn main() {
                 println!("end of the line");
                 break;
             }
-            Ok(Some(datum)) => println!("{:?}", datum),
+            Ok(Some(datum)) => {
+//                let p = u32::from_str(datum.)
+                ()
+            },
             Err(err) => {
                 println!("{}", err);
                 break;

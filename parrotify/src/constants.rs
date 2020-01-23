@@ -1,28 +1,30 @@
+const LETTER_WIDTH: usize = 9;
 
-pub const ENCODED_A: [& 'static [u8;9];5] = [
+pub const ENCODED_A: [&'static [u8; LETTER_WIDTH]; 5] = [
     b"AABBBBBAA",
     b"ABAAAAABA",
     b"ABBBBBBBA",
     b"ABAAAAABA",
-    b"ABAAAAABA"
+    b"ABAAAAABA",
 ];
-pub const encodedB : [& 'static [u8;9];5]= [
+
+pub const encodedB: [&'static [u8; 9]; 5] = [
     b"ABBBBBBAA",
     b"ABAAAAABA",
     b"ABBBBBBBA",
     b"ABAAAAABA",
     b"ABBBBBBAA",
 ];
-​
-const encodedC : [& 'static [u8;9];5]= [
+
+const encodedC: [&'static [u8; 9]; 5] = [
     b"ABBBBBBBA",
     b"ABAAAAAAA",
     b"ABAAAAAAA",
     b"ABAAAAAAA",
     b"ABBBBBBBA",
 ];
-​
-const encodedD : [& 'static [u8;9];5]= [
+
+const encodedD: [&'static [u8; 9]; 5] = [
     b"ABBBBBBAA",
     b"ABAAAAABA",
     b"ABAAAAABA",
@@ -30,314 +32,314 @@ const encodedD : [& 'static [u8;9];5]= [
     b"ABBBBBBAA",
 ];
 
-const encodedE: [& 'static [u8;9];5] = [
+const encodedE: [&'static [u8; 9]; 5] = [
     b"ABBBBBBBA",
     b"ABAAAAAAA",
     b"ABBBBBBBA",
     b"ABAAAAAAA",
     b"ABBBBBBBA",
 ];
-​
-const encodedF: [& 'static [u8;9];5] = [
+
+const encodedF: [&'static [u8; 9]; 5] = [
     b"ABBBBBBBA",
     b"ABAAAAAAA",
     b"ABBBBBBBA",
     b"ABAAAAAAA",
     b"ABAAAAAAA",
 ];
-​
-const encodedG : [& 'static [u8;9];5]= [
+
+const encodedG: [&'static [u8; 9]; 5] = [
     b"ABBBBBBBA",
     b"ABAAAAAAA",
     b"ABAAAABBA",
     b"ABAAAAABA",
     b"ABBBBBBBA",
 ];
-​
-const encodedH = [
-    "ABAAAAABA",
-    "ABAAAAABA",
-    "ABBBBBBBA",
-    "ABAAAAABA",
-    "ABAAAAABA",
+
+const encodedH: [&'static [u8; 9]; 5] = [
+    b"ABAAAAABA",
+    b"ABAAAAABA",
+    b"ABBBBBBBA",
+    b"ABAAAAABA",
+    b"ABAAAAABA",
 ];
-​
-const encodedI = [
-    "ABBBBBBBA",
-    "AAAABAAAA",
-    "AAAABAAAA",
-    "AAAABAAAA",
-    "ABBBBBBBA",
+
+const encodedI: [&'static [u8; 9]; 5] = [
+    b"ABBBBBBBA",
+    b"AAAABAAAA",
+    b"AAAABAAAA",
+    b"AAAABAAAA",
+    b"ABBBBBBBA",
 ];
-​
-const encodedJ = [
-    "ABBBBBBBA",
-    "AAAAAABAA",
-    "AAAAAABAA",
-    "ABAAAABAA",
-    "ABBBBBBAA",
+
+const encodedJ: [&'static [u8; 9]; 5] = [
+    b"ABBBBBBBA",
+    b"AAAAAABAA",
+    b"AAAAAABAA",
+    b"ABAAAABAA",
+    b"ABBBBBBAA",
 ];
-​
-const encodedK = [
-    "ABAAAAABA",
-    "ABAAABBAA",
-    "ABBBBBAAA",
-    "ABAAABBAA",
-    "ABAAAAABA",
+
+const encodedK: [&'static [u8; 9]; 5] = [
+    b"ABAAAAABA",
+    b"ABAAABBAA",
+    b"ABBBBBAAA",
+    b"ABAAABBAA",
+    b"ABAAAAABA",
 ];
-​
-const encodedL = [
-    "ABAAAAAAA",
-    "ABAAAAAAA",
-    "ABAAAAAAA",
-    "ABAAAAAAA",
-    "ABBBBBBBA",
+
+const encodedL: [&'static [u8; 9]; 5] = [
+    b"ABAAAAAAA",
+    b"ABAAAAAAA",
+    b"ABAAAAAAA",
+    b"ABAAAAAAA",
+    b"ABBBBBBBA",
 ];
-​
-const encodedM = [
-    "ABBAAABBA",
-    "ABABABABA",
-    "ABAABAABA",
-    "ABAABAABA",
-    "ABAABAABA",
+
+const encodedM: [&'static [u8; 9]; 5] = [
+    b"ABBAAABBA",
+    b"ABABABABA",
+    b"ABAABAABA",
+    b"ABAABAABA",
+    b"ABAABAABA",
 ];
-​
-const encodedN = [
-    "ABBAAAABA",
-    "ABABAAABA",
-    "ABAABBABA",
-    "ABAAAABBA",
-    "ABAAAAABA",
+
+const encodedN: [&'static [u8; 9]; 5] = [
+    b"ABBAAAABA",
+    b"ABABAAABA",
+    b"ABAABBABA",
+    b"ABAAAABBA",
+    b"ABAAAAABA",
 ];
-​
-const encodedO = [
-    "ABBBBBBBA",
-    "ABAAAAABA",
-    "ABAAAAABA",
-    "ABAAAAABA",
-    "ABBBBBBBA",
+
+const encodedO: [&'static [u8; 9]; 5] = [
+    b"ABBBBBBBA",
+    b"ABAAAAABA",
+    b"ABAAAAABA",
+    b"ABAAAAABA",
+    b"ABBBBBBBA",
 ];
-​
-const encodedP = [
-    "ABBBBBBBA",
-    "ABAAAAABA",
-    "ABBBBBBBA",
-    "ABAAAAAAA",
-    "ABAAAAAAA",
+
+const encodedP: [&'static [u8; 9]; 5] = [
+    b"ABBBBBBBA",
+    b"ABAAAAABA",
+    b"ABBBBBBBA",
+    b"ABAAAAAAA",
+    b"ABAAAAAAA",
 ];
-​
-const encodedQ = [
-    "ABBBBBBBA",
-    "ABAAAAABA",
-    "ABAAAAABA",
-    "ABAAABABA",
-    "ABBBBABAA",
+
+const encodedQ: [&'static [u8; 9]; 5] = [
+    b"ABBBBBBBA",
+    b"ABAAAAABA",
+    b"ABAAAAABA",
+    b"ABAAABABA",
+    b"ABBBBABAA",
 ];
-​
-const encodedR = [
-    "ABBBBBBBA",
-    "ABAAAAABA",
-    "ABBBBBBBA",
-    "ABAAAABAA",
-    "ABAAAAABA",
+
+const encodedR: [&'static [u8; 9]; 5] = [
+    b"ABBBBBBBA",
+    b"ABAAAAABA",
+    b"ABBBBBBBA",
+    b"ABAAAABAA",
+    b"ABAAAAABA",
 ];
-​
-const encodedS = [
-    "ABBBBBBBA",
-    "ABAAAAAAA",
-    "AABBBBBAA",
-    "AAAAAAABA",
-    "ABBBBBBBA",
+
+const encodedS: [&'static [u8; 9]; 5] = [
+    b"ABBBBBBBA",
+    b"ABAAAAAAA",
+    b"AABBBBBAA",
+    b"AAAAAAABA",
+    b"ABBBBBBBA",
 ];
-​
-const encodedT = [
-    "ABBBBBBBA",
-    "AAAABAAAA",
-    "AAAABAAAA",
-    "AAAABAAAA",
-    "AAAABAAAA",
+
+const encodedT: [&'static [u8; 9]; 5] = [
+    b"ABBBBBBBA",
+    b"AAAABAAAA",
+    b"AAAABAAAA",
+    b"AAAABAAAA",
+    b"AAAABAAAA",
 ];
-​
-const encodedU = [
-    "ABAAAAABA",
-    "ABAAAAABA",
-    "ABAAAAABA",
-    "ABAAAAABA",
-    "ABBBBBBBA",
+
+const encodedU: [&'static [u8; 9]; 5] = [
+    b"ABAAAAABA",
+    b"ABAAAAABA",
+    b"ABAAAAABA",
+    b"ABAAAAABA",
+    b"ABBBBBBBA",
 ];
-​
-const encodedV = [
-    "ABAAAAABA",
-    "ABAAAAABA",
-    "ABAAAAABA",
-    "AABAAABAA",
-    "AAABBBAAA",
+
+const encodedV: [&'static [u8; 9]; 5] = [
+    b"ABAAAAABA",
+    b"ABAAAAABA",
+    b"ABAAAAABA",
+    b"AABAAABAA",
+    b"AAABBBAAA",
 ];
-​
-const encodedW = [
-    "ABAAAAABA",
-    "ABAABAABA",
-    "ABAABAABA",
-    "ABABBBABA",
-    "ABBAAABBA",
+
+const encodedW: [&'static [u8; 9]; 5] = [
+    b"ABAAAAABA",
+    b"ABAABAABA",
+    b"ABAABAABA",
+    b"ABABBBABA",
+    b"ABBAAABBA",
 ];
-​
-const encodedX = [
-    "ABAAAAABA",
-    "AABAAABAA",
-    "AAABBBAAA",
-    "AABAAABAA",
-    "ABAAAAABA",
+
+const encodedX: [&'static [u8; 9]; 5] = [
+    b"ABAAAAABA",
+    b"AABAAABAA",
+    b"AAABBBAAA",
+    b"AABAAABAA",
+    b"ABAAAAABA",
 ];
-​
-const encodedY = [
-    "ABAAAAABA",
-    "AABAAABAA",
-    "AAABBBAAA",
-    "AAAABAAAA",
-    "AAAABAAAA",
+
+const encodedY: [&'static [u8; 9]; 5] = [
+    b"ABAAAAABA",
+    b"AABAAABAA",
+    b"AAABBBAAA",
+    b"AAAABAAAA",
+    b"AAAABAAAA",
 ];
-​
-const encodedZ = [
-    "ABBBBBBBA",
-    "AAAAAABAA",
-    "AAAABBAAA",
-    "AABAAAAAA",
-    "ABBBBBBBA",
+
+const encodedZ: [&'static [u8; 9]; 5] = [
+    b"ABBBBBBBA",
+    b"AAAAAABAA",
+    b"AAAABBAAA",
+    b"AABAAAAAA",
+    b"ABBBBBBBA",
 ];
-​
-const encodedSpace = [
-    "AAAAAAAAA",
-    "AAAAAAAAA",
-    "AAAAAAAAA",
-    "AAAAAAAAA",
-    "AAAAAAAAA",
+
+const encodedSpace: [&'static [u8; 9]; 5] = [
+    b"AAAAAAAAA",
+    b"AAAAAAAAA",
+    b"AAAAAAAAA",
+    b"AAAAAAAAA",
+    b"AAAAAAAAA",
 ];
-​
-const encodedExclamation = [
-    "AAAABAAAA",
-    "AAAABAAAA",
-    "AAAABAAAA",
-    "AAAAAAAAA",
-    "AAAABAAAA",
+
+const encodedExclamation: [&'static [u8; 9]; 5] = [
+    b"AAAABAAAA",
+    b"AAAABAAAA",
+    b"AAAABAAAA",
+    b"AAAAAAAAA",
+    b"AAAABAAAA",
 ];
-​
-const encodedQuestion = [
-    "ABBBBBBBA",
-    "AAAAAAABA",
-    "AAAABBBA",
-    "AAAAAAAAA",
-    "AAAABAAAA",
+
+const encodedQuestion: [&'static [u8; 9]; 5] = [
+    b"ABBBBBBBA",
+    b"AAAAAAABA",
+    b"AAAABBBAA",
+    b"AAAAAAAAA",
+    b"AAAABAAAA",
 ];
-​
-const encodedPeriod = [
-    "AAAAAAAAA",
-    "AAAAAAAAA",
-    "AAAAAAAAA",
-    "AAAAAAAAA",
-    "AAAABAAAA",
+
+const encodedPeriod: [&'static [u8; 9]; 5] = [
+    b"AAAAAAAAA",
+    b"AAAAAAAAA",
+    b"AAAAAAAAA",
+    b"AAAAAAAAA",
+    b"AAAABAAAA",
 ];
-​
-const encodedDash = [
-    "AAAAAAAAA",
-    "AAAAAAAAA",
-    "ABBBBBBBA",
-    "AAAAAAAAA",
-    "AAAAAAAAA",
+
+const encodedDash: [&'static [u8; 9]; 5] = [
+    b"AAAAAAAAA",
+    b"AAAAAAAAA",
+    b"ABBBBBBBA",
+    b"AAAAAAAAA",
+    b"AAAAAAAAA",
 ];
-​
-const encodedEquals = [
-    "AAAAAAAAA",
-    "ABBBBBBBA",
-    "AAAAAAAAA",
-    "ABBBBBBBA",
-    "AAAAAAAAA",
+
+const encodedEquals: [&'static [u8; 9]; 5] = [
+    b"AAAAAAAAA",
+    b"ABBBBBBBA",
+    b"AAAAAAAAA",
+    b"ABBBBBBBA",
+    b"AAAAAAAAA",
 ];
-​
-const encodedPlus = [
-    "AAAABAAAA",
-    "AAAABAAAA",
-    "ABBBBBBBA",
-    "AAAABAAAA",
-    "AAAABAAAA",
+
+const encodedPlus: [&'static [u8; 9]; 5] = [
+    b"AAAABAAAA",
+    b"AAAABAAAA",
+    b"ABBBBBBBA",
+    b"AAAABAAAA",
+    b"AAAABAAAA",
 ];
-​
-const encoded1 = [
-    "AAAABBAAA",
-    "AAABABAAA",
-    "AAAAABAAA",
-    "AAAAABAAA",
-    "AABBBBBBA",
+
+const encoded1: [&'static [u8; 9]; 5] = [
+    b"AAAABBAAA",
+    b"AAABABAAA",
+    b"AAAAABAAA",
+    b"AAAAABAAA",
+    b"AABBBBBBA",
 ];
-​
-const encoded2 = [
-    "ABBBBBBBA",
-    "AAAAAAABA",
-    "ABBBBBBBA",
-    "ABAAAAAAA",
-    "ABBBBBBBA",
+
+const encoded2: [&'static [u8; 9]; 5] = [
+    b"ABBBBBBBA",
+    b"AAAAAAABA",
+    b"ABBBBBBBA",
+    b"ABAAAAAAA",
+    b"ABBBBBBBA",
 ];
-​
-const encoded3 = [
-    "ABBBBBBBA",
-    "AAAAAAABA",
-    "AABBBBBAA",
-    "AAAAAAABA",
-    "ABBBBBBAA",
+
+const encoded3: [&'static [u8; 9]; 5] = [
+    b"ABBBBBBBA",
+    b"AAAAAAABA",
+    b"AABBBBBAA",
+    b"AAAAAAABA",
+    b"ABBBBBBAA",
 ];
-​
-const encoded4 = [
-    "ABAAAABAA",
-    "ABAAAABAA",
-    "ABBBBBBBA",
-    "AAAAAABAA",
-    "AAAAAABAA",
+
+const encoded4: [&'static [u8; 9]; 5] = [
+    b"ABAAAABAA",
+    b"ABAAAABAA",
+    b"ABBBBBBBA",
+    b"AAAAAABAA",
+    b"AAAAAABAA",
 ];
-​
-const encoded5 = [
-    "ABBBBBBBA",
-    "ABAAAAAAA",
-    "ABBBBBBBA",
-    "AAAAAAABA",
-    "ABBBBBBBA",
+
+const encoded5: [&'static [u8; 9]; 5] = [
+    b"ABBBBBBBA",
+    b"ABAAAAAAA",
+    b"ABBBBBBBA",
+    b"AAAAAAABA",
+    b"ABBBBBBBA",
 ];
-​
-const encoded6 = [
-    "ABBBBBBBA",
-    "ABAAAAAAA",
-    "ABBBBBBBA",
-    "ABAAAAABA",
-    "ABBBBBBBA",
+
+const encoded6: [&'static [u8; 9]; 5] = [
+    b"ABBBBBBBA",
+    b"ABAAAAAAA",
+    b"ABBBBBBBA",
+    b"ABAAAAABA",
+    b"ABBBBBBBA",
 ];
-​
-const encoded7 = [
-    "ABBBBBBBA",
-    "AAAAAABAA",
-    "AAAAABAAA",
-    "AAAABAAAA",
-    "AAABAAAAA",
+
+const encoded7: [&'static [u8; 9]; 5] = [
+    b"ABBBBBBBA",
+    b"AAAAAABAA",
+    b"AAAAABAAA",
+    b"AAAABAAAA",
+    b"AAABAAAAA",
 ];
-​
-const encoded8 = [
-    "ABBBBBBBA",
-    "ABAAAAABA",
-    "ABBBBBBBA",
-    "ABAAAAABA",
-    "ABBBBBBBA",
+
+const encoded8: [&'static [u8; 9]; 5] = [
+    b"ABBBBBBBA",
+    b"ABAAAAABA",
+    b"ABBBBBBBA",
+    b"ABAAAAABA",
+    b"ABBBBBBBA",
 ];
-​
-const encoded9 = [
-    "ABBBBBBBA",
-    "ABAAAAABA",
-    "ABBBBBBBA",
-    "AAAAAAABA",
-    "ABBBBBBBA",
+
+const encoded9: [&'static [u8; 9]; 5] = [
+    b"ABBBBBBBA",
+    b"ABAAAAABA",
+    b"ABBBBBBBA",
+    b"AAAAAAABA",
+    b"ABBBBBBBA",
 ];
-​
-const encoded0 = [
-    "ABBBBBBBA",
-    "ABAAAABBA",
-    "ABAABAABA",
-    "ABBAAAABA",
-    "ABBBBBBBA",
+
+const encoded0: [&'static [u8; 9]; 5] = [
+    b"ABBBBBBBA",
+    b"ABAAAABBA",
+    b"ABAABAABA",
+    b"ABBAAAABA",
+    b"ABBBBBBBA",
 ];

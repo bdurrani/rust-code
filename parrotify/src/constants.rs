@@ -1,9 +1,13 @@
 use std::collections::HashMap;
-const LETTER_WIDTH: usize = 9;
+pub const LETTER_WIDTH: usize = 9;
+pub const LETTER_HEIGHT: usize = 5;
 
-pub fn build_map() -> HashMap<char, [&'static [u8; 9]; 5]> {
+pub fn build_map() -> HashMap<char, [&'static [u8; LETTER_WIDTH]; LETTER_HEIGHT]> {
     let mut encoding = HashMap::new();
     encoding.insert('a', ENCODED_A);
+    encoding.insert('b', ENCODED_B);
+    encoding.insert('c', ENCODED_C);
+    encoding.insert('d', ENCODED_C);
 
     return encoding;
 }

@@ -26,8 +26,24 @@ fn main() {
     let str2 = matches.value_of("string2").unwrap();
     let hash = constants::build_map();
 
-    let test = "A";
-    for c in test.chars() {
-        println!("{:?}", hash.get(&c.to_ascii_lowercase()));
+    let test = "ABCD";
+    let len = test.len();
+    let width = constants::LETTER_WIDTH;
+    let mut row1: Vec<u8> = Vec::with_capacity(width * len);
+    //    row1.copy_from_slice(
+    //        hash.get(&(test.chars().next().unwrap()).to_ascii_lowercase())
+    //            .unwrap()[0],
+    //    );
+    row1.extend_from_slice(
+        hash.get(&(test.chars().next().unwrap()).to_ascii_lowercase())
+            .unwrap()[0],
+    );
+    row1.extend_from_slice(
+        hash.get(&(test.chars().next().unwrap()).to_ascii_lowercase())
+            .unwrap()[0],
+    );
+    for c in message.chars() {
+        //        println!("{:?}", hash.get(&c.to_ascii_lowercase()).unwrap());
     }
+    println!("{:?}", String::from_utf8(row1));
 }

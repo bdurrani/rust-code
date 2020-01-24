@@ -1,4 +1,12 @@
+use std::collections::HashMap;
 const LETTER_WIDTH: usize = 9;
+
+pub fn build_map() -> HashMap<char, [&'static [u8; 9]; 5]> {
+    let mut encoding = HashMap::new();
+    encoding.insert('a', ENCODED_A);
+
+    return encoding;
+}
 
 pub const ENCODED_A: [&'static [u8; LETTER_WIDTH]; 5] = [
     b"AABBBBBAA",
@@ -8,7 +16,7 @@ pub const ENCODED_A: [&'static [u8; LETTER_WIDTH]; 5] = [
     b"ABAAAAABA",
 ];
 
-pub const encodedB: [&'static [u8; 9]; 5] = [
+pub const ENCODED_B: [&'static [u8; 9]; 5] = [
     b"ABBBBBBAA",
     b"ABAAAAABA",
     b"ABBBBBBBA",
@@ -16,7 +24,7 @@ pub const encodedB: [&'static [u8; 9]; 5] = [
     b"ABBBBBBAA",
 ];
 
-const encodedC: [&'static [u8; 9]; 5] = [
+const ENCODED_C: [&'static [u8; 9]; 5] = [
     b"ABBBBBBBA",
     b"ABAAAAAAA",
     b"ABAAAAAAA",
@@ -24,7 +32,7 @@ const encodedC: [&'static [u8; 9]; 5] = [
     b"ABBBBBBBA",
 ];
 
-const encodedD: [&'static [u8; 9]; 5] = [
+const ENCODED_D: [&'static [u8; 9]; 5] = [
     b"ABBBBBBAA",
     b"ABAAAAABA",
     b"ABAAAAABA",
@@ -32,7 +40,7 @@ const encodedD: [&'static [u8; 9]; 5] = [
     b"ABBBBBBAA",
 ];
 
-const encodedE: [&'static [u8; 9]; 5] = [
+const ENCODED_E: [&'static [u8; 9]; 5] = [
     b"ABBBBBBBA",
     b"ABAAAAAAA",
     b"ABBBBBBBA",
@@ -40,7 +48,7 @@ const encodedE: [&'static [u8; 9]; 5] = [
     b"ABBBBBBBA",
 ];
 
-const encodedF: [&'static [u8; 9]; 5] = [
+const ENCODED_F: [&'static [u8; 9]; 5] = [
     b"ABBBBBBBA",
     b"ABAAAAAAA",
     b"ABBBBBBBA",
@@ -48,7 +56,7 @@ const encodedF: [&'static [u8; 9]; 5] = [
     b"ABAAAAAAA",
 ];
 
-const encodedG: [&'static [u8; 9]; 5] = [
+const ENCODED_G: [&'static [u8; 9]; 5] = [
     b"ABBBBBBBA",
     b"ABAAAAAAA",
     b"ABAAAABBA",
@@ -56,7 +64,7 @@ const encodedG: [&'static [u8; 9]; 5] = [
     b"ABBBBBBBA",
 ];
 
-const encodedH: [&'static [u8; 9]; 5] = [
+const ENCODED_H: [&'static [u8; 9]; 5] = [
     b"ABAAAAABA",
     b"ABAAAAABA",
     b"ABBBBBBBA",

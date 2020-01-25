@@ -1,25 +1,6 @@
 use clap::{App, Arg};
 mod constants;
-type Row = Vec<u8>;
-
-#[derive(Debug)]
-struct Line {
-    items: [Row; constants::LETTER_HEIGHT],
-}
-
-impl Line {
-    /// Create a new Line
-    pub fn new() -> Line {
-        let arr: [Row; constants::LETTER_HEIGHT] = Default::default();
-        Line { items: arr }
-    }
-
-    pub fn addLetter(&mut self, letter: constants::Letter) {
-        for i in 0..constants::LETTER_HEIGHT {
-            self.items[i].extend_from_slice(letter[i]);
-        }
-    }
-}
+mod line;
 
 fn main() {
     let matches = App::new("parrotify")
@@ -45,9 +26,10 @@ fn main() {
     let str1 = matches.value_of("string1").unwrap();
     let str2 = matches.value_of("string2").unwrap();
     let hash = constants::build_map();
-    let mut line = Line::new();
-    line.addLetter(constants::ENCODED_A);
-    println!("{:?}", line);
+    let mut line = line::Line::new();
+    line.add_letter(constants::ENCODED_A);
+    line.replace_a(&'C');
+    println!("{}", line);
     //    let test = "ABCD";
     //    let len = test.len();
     //    let width = constants::LETTER_WIDTH;

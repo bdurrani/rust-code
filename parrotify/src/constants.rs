@@ -1,6 +1,7 @@
 use std::collections::HashMap;
 pub const LETTER_WIDTH: usize = 9;
 pub const LETTER_HEIGHT: usize = 5;
+pub type Letter = [&'static [u8; LETTER_WIDTH]; LETTER_HEIGHT];
 
 pub fn build_map() -> HashMap<char, [&'static [u8; LETTER_WIDTH]; LETTER_HEIGHT]> {
     let mut encoding = HashMap::new();
@@ -20,7 +21,7 @@ pub const ENCODED_A: [&'static [u8; LETTER_WIDTH]; 5] = [
     b"ABAAAAABA",
 ];
 
-pub const ENCODED_B: [&'static [u8; 9]; 5] = [
+pub const ENCODED_B: [&'static [u8; LETTER_WIDTH]; 5] = [
     b"ABBBBBBAA",
     b"ABAAAAABA",
     b"ABBBBBBBA",
@@ -84,7 +85,7 @@ const encodedI: [&'static [u8; 9]; 5] = [
     b"ABBBBBBBA",
 ];
 
-const encodedJ: [&'static [u8; 9]; 5] = [
+const ENCODED_J: [&'static [u8; 9]; 5] = [
     b"ABBBBBBBA",
     b"AAAAAABAA",
     b"AAAAAABAA",
@@ -92,7 +93,7 @@ const encodedJ: [&'static [u8; 9]; 5] = [
     b"ABBBBBBAA",
 ];
 
-const encodedK: [&'static [u8; 9]; 5] = [
+const ENCODED_K: [&'static [u8; 9]; 5] = [
     b"ABAAAAABA",
     b"ABAAABBAA",
     b"ABBBBBAAA",
@@ -100,7 +101,7 @@ const encodedK: [&'static [u8; 9]; 5] = [
     b"ABAAAAABA",
 ];
 
-const encodedL: [&'static [u8; 9]; 5] = [
+const ENCODED_L: [&'static [u8; 9]; 5] = [
     b"ABAAAAAAA",
     b"ABAAAAAAA",
     b"ABAAAAAAA",
@@ -108,7 +109,7 @@ const encodedL: [&'static [u8; 9]; 5] = [
     b"ABBBBBBBA",
 ];
 
-const encodedM: [&'static [u8; 9]; 5] = [
+const ENCODED_M: [&'static [u8; 9]; 5] = [
     b"ABBAAABBA",
     b"ABABABABA",
     b"ABAABAABA",
@@ -116,7 +117,7 @@ const encodedM: [&'static [u8; 9]; 5] = [
     b"ABAABAABA",
 ];
 
-const encodedN: [&'static [u8; 9]; 5] = [
+const ENCODED_N: [&'static [u8; 9]; 5] = [
     b"ABBAAAABA",
     b"ABABAAABA",
     b"ABAABBABA",
@@ -124,7 +125,7 @@ const encodedN: [&'static [u8; 9]; 5] = [
     b"ABAAAAABA",
 ];
 
-const encodedO: [&'static [u8; 9]; 5] = [
+const ENCODED_O: [&'static [u8; 9]; 5] = [
     b"ABBBBBBBA",
     b"ABAAAAABA",
     b"ABAAAAABA",
@@ -132,7 +133,7 @@ const encodedO: [&'static [u8; 9]; 5] = [
     b"ABBBBBBBA",
 ];
 
-const encodedP: [&'static [u8; 9]; 5] = [
+const ENCODED_P: [&'static [u8; 9]; 5] = [
     b"ABBBBBBBA",
     b"ABAAAAABA",
     b"ABBBBBBBA",
@@ -140,7 +141,7 @@ const encodedP: [&'static [u8; 9]; 5] = [
     b"ABAAAAAAA",
 ];
 
-const encodedQ: [&'static [u8; 9]; 5] = [
+const ENCODED_Q: [&'static [u8; 9]; 5] = [
     b"ABBBBBBBA",
     b"ABAAAAABA",
     b"ABAAAAABA",
@@ -148,7 +149,7 @@ const encodedQ: [&'static [u8; 9]; 5] = [
     b"ABBBBABAA",
 ];
 
-const encodedR: [&'static [u8; 9]; 5] = [
+const ENCODED_R: [&'static [u8; 9]; 5] = [
     b"ABBBBBBBA",
     b"ABAAAAABA",
     b"ABBBBBBBA",

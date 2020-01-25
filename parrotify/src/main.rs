@@ -1,5 +1,25 @@
 use clap::{App, Arg};
 mod constants;
+type Row = Vec<u8>;
+
+#[derive(Debug)]
+struct Line {
+    items: [Row; constants::LETTER_HEIGHT],
+}
+
+impl Line {
+    /// Create a new Line
+    pub fn new() -> Line {
+        let arr: [Row; constants::LETTER_HEIGHT] = Default::default();
+        Line { items: arr }
+    }
+
+    pub fn addLetter(&mut self, letter: constants::Letter) {
+        for i in 0..constants::LETTER_HEIGHT {
+            self.items[i].extend_from_slice(letter[i]);
+        }
+    }
+}
 
 fn main() {
     let matches = App::new("parrotify")
@@ -25,25 +45,27 @@ fn main() {
     let str1 = matches.value_of("string1").unwrap();
     let str2 = matches.value_of("string2").unwrap();
     let hash = constants::build_map();
-
-    let test = "ABCD";
-    let len = test.len();
-    let width = constants::LETTER_WIDTH;
-    let mut row1: Vec<u8> = Vec::with_capacity(width * len);
+    let mut line = Line::new();
+    line.addLetter(constants::ENCODED_A);
+    println!("{:?}", line);
+    //    let test = "ABCD";
+    //    let len = test.len();
+    //    let width = constants::LETTER_WIDTH;
+    //    let mut row1: Vec<u8> = Vec::with_capacity(width * len);
     //    row1.copy_from_slice(
     //        hash.get(&(test.chars().next().unwrap()).to_ascii_lowercase())
     //            .unwrap()[0],
     //    );
-    row1.extend_from_slice(
-        hash.get(&(test.chars().next().unwrap()).to_ascii_lowercase())
-            .unwrap()[0],
-    );
-    row1.extend_from_slice(
-        hash.get(&(test.chars().next().unwrap()).to_ascii_lowercase())
-            .unwrap()[0],
-    );
-    for c in message.chars() {
-        //        println!("{:?}", hash.get(&c.to_ascii_lowercase()).unwrap());
-    }
-    println!("{:?}", String::from_utf8(row1));
+    //    row1.extend_from_slice(
+    //        hash.get(&(test.chars().next().unwrap()).to_ascii_lowercase())
+    //            .unwrap()[0],
+    //    );
+    //    row1.extend_from_slice(
+    //        hash.get(&(test.chars().next().unwrap()).to_ascii_lowercase())
+    //            .unwrap()[0],
+    //    );
+    //    for c in message.chars() {
+    //        println!("{:?}", hash.get(&c.to_ascii_lowercase()).unwrap());
+    //    }
+    //    println!("{:?}", String::from_utf8(row1));
 }

@@ -21,3 +21,10 @@ See the `minigrep` folder for VSCode settings
 ## To view documentation locally
 
 `rustup docs`
+
+## Create a new rust project
+
+```
+cargo new my-app --vcs none
+```
+

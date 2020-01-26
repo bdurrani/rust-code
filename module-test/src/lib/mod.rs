@@ -1,4 +1,5 @@
-use self::lib1;
+pub mod lib1;
+use super::constants;
 
 pub struct TestLib {
     item: u8,
@@ -6,6 +7,7 @@ pub struct TestLib {
 
 impl TestLib {
     pub fn new() -> TestLib {
+        println!("{}", constants::TEST);
         TestLib { item: 5 }
     }
 }

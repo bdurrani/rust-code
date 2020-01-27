@@ -1,4 +1,4 @@
-use crate::constants;
+use super::constants;
 
 pub fn test_foo() {
     println!("test_foo");

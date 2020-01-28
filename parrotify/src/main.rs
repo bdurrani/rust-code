@@ -1,5 +1,4 @@
 use clap::{App, Arg};
-mod constants;
 mod line;
 
 fn main() {
@@ -25,10 +24,9 @@ fn main() {
 
     let str1 = matches.value_of("string1").unwrap();
     let str2 = matches.value_of("string2").unwrap();
-    let hash = constants::build_map();
     let mut line = line::Line::new();
-    line.add_letter(constants::ENCODED_A);
-    line.replace_a(&'C');
+//    line.add_letter(constants::ENCODED_A);
+    line.replace_a(&str2.chars().nth(0).unwrap());
     println!("{}", line);
     //    let test = "ABCD";
     //    let len = test.len();

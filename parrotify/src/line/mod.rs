@@ -7,13 +7,22 @@ type Row = String;
 #[derive(Debug)]
 pub struct Line {
     items: [Row; constants::LETTER_HEIGHT],
+    hashmap: HashMap<char, constants::Letter>
 }
 
 impl Line {
     /// Create a new Line
     pub fn new() -> Line {
         let arr: [Row; constants::LETTER_HEIGHT] = Default::default();
-        Line { items: arr }
+        let has = Line::build_map();
+        Line { items: arr, hashmap:has }
+    }
+
+    pub fn add_letter1(&mut self, letter: &char) {
+        for i in 0..constants::LETTER_HEIGHT {
+            // consider using String::from_utf8_lossy()
+            self.items[i].push_str(str::from_utf8(letter[i]).unwrap());
+        }
     }
 
     pub fn add_letter(&mut self, letter: constants::Letter) {

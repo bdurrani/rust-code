@@ -229,7 +229,7 @@ pub const ENCODED_SPACE: [&'static [u8; 9]; 5] = [
     b"AAAAAAAAA",
 ];
 
-pub const encodedExclamation: [&'static [u8; 9]; 5] = [
+pub const ENCODED_EXCLAMATION: [&'static [u8; 9]; 5] = [
     b"AAAABAAAA",
     b"AAAABAAAA",
     b"AAAABAAAA",
@@ -237,7 +237,7 @@ pub const encodedExclamation: [&'static [u8; 9]; 5] = [
     b"AAAABAAAA",
 ];
 
-pub const encodedQuestion: [&'static [u8; 9]; 5] = [
+pub const ENCODED_QUESTION: [&'static [u8; 9]; 5] = [
     b"ABBBBBBBA",
     b"AAAAAAABA",
     b"AAAABBBAA",
@@ -245,7 +245,7 @@ pub const encodedQuestion: [&'static [u8; 9]; 5] = [
     b"AAAABAAAA",
 ];
 
-pub const encodedPeriod: [&'static [u8; 9]; 5] = [
+pub const ENCODED_PERIOD: [&'static [u8; 9]; 5] = [
     b"AAAAAAAAA",
     b"AAAAAAAAA",
     b"AAAAAAAAA",
@@ -253,7 +253,7 @@ pub const encodedPeriod: [&'static [u8; 9]; 5] = [
     b"AAAABAAAA",
 ];
 
-pub const encodedDash: [&'static [u8; 9]; 5] = [
+pub const ENCODED_DASH: [&'static [u8; 9]; 5] = [
     b"AAAAAAAAA",
     b"AAAAAAAAA",
     b"ABBBBBBBA",
@@ -261,7 +261,7 @@ pub const encodedDash: [&'static [u8; 9]; 5] = [
     b"AAAAAAAAA",
 ];
 
-pub const encodedEquals: [&'static [u8; 9]; 5] = [
+pub const ENCODED_EQUALS: [&'static [u8; 9]; 5] = [
     b"AAAAAAAAA",
     b"ABBBBBBBA",
     b"AAAAAAAAA",
@@ -269,7 +269,7 @@ pub const encodedEquals: [&'static [u8; 9]; 5] = [
     b"AAAAAAAAA",
 ];
 
-pub const encodedPlus: [&'static [u8; 9]; 5] = [
+pub const ENCODED_PLUS: [&'static [u8; 9]; 5] = [
     b"AAAABAAAA",
     b"AAAABAAAA",
     b"ABBBBBBBA",
@@ -277,7 +277,7 @@ pub const encodedPlus: [&'static [u8; 9]; 5] = [
     b"AAAABAAAA",
 ];
 
-pub const encoded1: [&'static [u8; 9]; 5] = [
+pub const ENCODED1: [&'static [u8; 9]; 5] = [
     b"AAAABBAAA",
     b"AAABABAAA",
     b"AAAAABAAA",
@@ -285,7 +285,7 @@ pub const encoded1: [&'static [u8; 9]; 5] = [
     b"AABBBBBBA",
 ];
 
-pub const encoded2: [&'static [u8; 9]; 5] = [
+pub const ENCODED2: [&'static [u8; 9]; 5] = [
     b"ABBBBBBBA",
     b"AAAAAAABA",
     b"ABBBBBBBA",
@@ -293,7 +293,7 @@ pub const encoded2: [&'static [u8; 9]; 5] = [
     b"ABBBBBBBA",
 ];
 
-pub const encoded3: [&'static [u8; 9]; 5] = [
+pub const ENCODED3: [&'static [u8; 9]; 5] = [
     b"ABBBBBBBA",
     b"AAAAAAABA",
     b"AABBBBBAA",
@@ -301,7 +301,7 @@ pub const encoded3: [&'static [u8; 9]; 5] = [
     b"ABBBBBBAA",
 ];
 
-pub const encoded4: [&'static [u8; 9]; 5] = [
+pub const ENCODED4: [&'static [u8; 9]; 5] = [
     b"ABAAAABAA",
     b"ABAAAABAA",
     b"ABBBBBBBA",
@@ -309,7 +309,7 @@ pub const encoded4: [&'static [u8; 9]; 5] = [
     b"AAAAAABAA",
 ];
 
-pub const encoded5: [&'static [u8; 9]; 5] = [
+pub const ENCODED5: [&'static [u8; 9]; 5] = [
     b"ABBBBBBBA",
     b"ABAAAAAAA",
     b"ABBBBBBBA",
@@ -317,7 +317,7 @@ pub const encoded5: [&'static [u8; 9]; 5] = [
     b"ABBBBBBBA",
 ];
 
-pub const encoded6: [&'static [u8; 9]; 5] = [
+pub const ENCODED6: [&'static [u8; 9]; 5] = [
     b"ABBBBBBBA",
     b"ABAAAAAAA",
     b"ABBBBBBBA",
@@ -325,7 +325,7 @@ pub const encoded6: [&'static [u8; 9]; 5] = [
     b"ABBBBBBBA",
 ];
 
-pub const encoded7: [&'static [u8; 9]; 5] = [
+pub const ENCODED7: [&'static [u8; 9]; 5] = [
     b"ABBBBBBBA",
     b"AAAAAABAA",
     b"AAAAABAAA",
@@ -333,7 +333,7 @@ pub const encoded7: [&'static [u8; 9]; 5] = [
     b"AAABAAAAA",
 ];
 
-pub const encoded8: [&'static [u8; 9]; 5] = [
+pub const ENCODED8: [&'static [u8; 9]; 5] = [
     b"ABBBBBBBA",
     b"ABAAAAABA",
     b"ABBBBBBBA",

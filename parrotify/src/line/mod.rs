@@ -57,7 +57,24 @@ impl Line {
         encoding.insert('w', constants::ENCODED_W);
         encoding.insert('x', constants::ENCODED_X);
         encoding.insert('y', constants::ENCODED_Y);
-        encoding.insert('z', constants::ENCODED_Z);;
+        encoding.insert('z', constants::ENCODED_Z);
+        encoding.insert(' ', constants::ENCODED_SPACE);
+        encoding.insert('!', constants::ENCODED_EXCLAMATION);
+        encoding.insert('?', constants::ENCODED_QUESTION);
+        encoding.insert('.', constants::ENCODED_PERIOD);
+        encoding.insert('-', constants::ENCODED_DASH);
+        encoding.insert('=', constants::ENCODED_EQUALS);
+        encoding.insert('+', constants::ENCODED_PLUS);
+        encoding.insert('1', constants::ENCODED1);
+        encoding.insert('2', constants::ENCODED2);
+        encoding.insert('3', constants::ENCODED3);
+        encoding.insert('4', constants::ENCODED4);
+        encoding.insert('5', constants::ENCODED5);
+        encoding.insert('6', constants::ENCODED6);
+        encoding.insert('7', constants::ENCODED7);
+        encoding.insert('8', constants::ENCODED8);
+        encoding.insert('9', constants::ENCODED9);
+        encoding.insert('0', constants::ENCODED0);
 
         return encoding;
     }

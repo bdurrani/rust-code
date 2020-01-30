@@ -25,7 +25,8 @@ fn main() {
     let str1 = matches.value_of("string1").unwrap();
     let str2 = matches.value_of("string2").unwrap();
     let mut line = line::Line::new();
-    for item in message.chars(){
+    for item in message.chars() {
+        line.add_letter(&item);
     }
 
     line.replace_a(&str2.chars().nth(0).unwrap());

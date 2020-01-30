@@ -1,13 +1,13 @@
 // https://doc.rust-lang.org/book/ch07-04-bringing-paths-into-scope-with-the-use-keyword.html
 mod constants;
-use std::{fmt, str};
 use std::collections::HashMap;
+use std::{fmt, str};
 type Row = String;
 
 #[derive(Debug)]
 pub struct Line {
     items: [Row; constants::LETTER_HEIGHT],
-    hashmap: HashMap<char, constants::Letter>
+    hashmap: HashMap<char, constants::Letter>,
 }
 
 impl Line {
@@ -15,28 +15,32 @@ impl Line {
     pub fn new() -> Line {
         let arr: [Row; constants::LETTER_HEIGHT] = Default::default();
         let has = Line::build_map();
-        Line { items: arr, hashmap:has }
-    }
-
-    pub fn add_letter1(&mut self, letter: &char) {
-        for i in 0..constants::LETTER_HEIGHT {
-            // consider using String::from_utf8_lossy()
-            self.items[i].push_str(str::from_utf8(letter[i]).unwrap());
+        Line {
+            items: arr,
+            hashmap: has,
         }
     }
 
-    pub fn add_letter(&mut self, letter: constants::Letter) {
+    pub fn add_letter(&mut self, letter: &char) {
+        let found_letter = self.hashmap.get(letter).unwrap();
         for i in 0..constants::LETTER_HEIGHT {
-            // consider using String::from_utf8_lossy()
-            self.items[i].push_str(str::from_utf8(letter[i]).unwrap());
+            self.items[i].push_str(str::from_utf8(found_letter[i]).unwrap());
         }
     }
+
+    //    pub fn add_letter(&mut self, letter: constants::Letter) {
+    //        for i in 0..constants::LETTER_HEIGHT {
+    //            // consider using String::from_utf8_lossy()
+    //            self.items[i].push_str(str::from_utf8(letter[i]).unwrap());
+    //        }
+    //    }
 
     pub fn replace_a(&mut self, replacement: &char) {
         for i in 0..constants::LETTER_HEIGHT {
             self.items[i] = self.items[i].replace("A", &replacement.to_string()[..]);
         }
     }
+
     fn build_map() -> HashMap<char, constants::Letter> {
         let mut encoding = HashMap::new();
         encoding.insert('a', constants::ENCODED_A);

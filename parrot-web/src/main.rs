@@ -5,6 +5,10 @@ use actix_web::{
     Result,
 };
 
+mod parrotify;
+
+use parrotify::config;
+
 #[derive(Fail, Debug)]
 #[fail(display = "my error")]
 pub struct MyError {
@@ -20,15 +24,6 @@ async fn index() -> Result<&'static str, MyError> {
     Err(err)
 }
 
-// this function could be located in different module
-// https://github.com/fairingrey/actix-realworld-example-app/blob/master/src/app/mod.rs
-fn config(cfg: &mut web::ServiceConfig) {
-    cfg.service(web::resource("/test")
-        .route(web::get().to(|| HttpResponse::Ok()))
-        .route(web::head().to(|| HttpResponse::MethodNotAllowed()))
-    );
-}
-
 #[actix_rt::main]
 async fn main() -> std::io::Result<()> {
     use actix_web::{middleware::Logger, web, App, HttpServer};
@@ -42,6 +37,7 @@ async fn main() -> std::io::Result<()> {
             // enable logger - always register actix-web Logger middleware last
             .wrap(middleware::Logger::default())
             .configure(config)
+            .configure(parrotify::another)
             .route("/", web::get().to(index))
     })
     .bind("127.0.0.1:8088")?

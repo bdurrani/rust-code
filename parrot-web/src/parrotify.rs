@@ -74,7 +74,6 @@ async fn step_x(data: SomeData, client: &Client) -> Result<SomeData, Error> {
     while let Some(chunk) = res.next().await {
         body.extend_from_slice(&chunk?);
     }
-
     let body: HttpBinResponse = serde_json::from_slice(&body).unwrap();
     Ok(body.json)
 }
@@ -83,9 +82,11 @@ async fn create_something(
     some_data: web::Json<SomeData>,
     client: web::Data<Client>,
 ) -> Result<HttpResponse, Error> {
-    println!("There was post");
+    println!("{:?}", some_data);
     let some_data_2 = step_x(some_data.into_inner(), &client).await?;
+    println!("{:?}", some_data_2);
     let some_data_3 = step_x(some_data_2, &client).await?;
+    println!("{:?}", some_data_3);
     let d = step_x(some_data_3, &client).await?;
 
     Ok(HttpResponse::Ok()

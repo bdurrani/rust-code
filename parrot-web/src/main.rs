@@ -1,9 +1,9 @@
+use actix_web::{
+    client::Client, error, guard, middleware, web, App, Error, HttpRequest, HttpResponse,
+    HttpServer, Result,
+};
 use failure::Fail;
 use log::debug;
-use actix_web::{
-    error, guard, middleware, web, App, Error, HttpRequest, HttpResponse, HttpServer,
-    Result,
-};
 
 mod parrotify;
 
@@ -28,7 +28,7 @@ async fn index() -> Result<&'static str, MyError> {
 async fn main() -> std::io::Result<()> {
     use actix_web::{middleware::Logger, web, App, HttpServer};
 
-    std::env::set_var("RUST_LOG", "my_errors=debug,actix_web=info");
+    std::env::set_var("RUST_LOG", "my_errors=debug,actix_web=debug");
     std::env::set_var("RUST_BACKTRACE", "1");
     env_logger::init();
 
@@ -36,8 +36,10 @@ async fn main() -> std::io::Result<()> {
         App::new()
             // enable logger - always register actix-web Logger middleware last
             .wrap(middleware::Logger::default())
+            .data(Client::default())
             .configure(config)
             .configure(parrotify::another)
+            .configure(parrotify::async_another)
             .route("/", web::get().to(index))
     })
     .bind("127.0.0.1:8088")?

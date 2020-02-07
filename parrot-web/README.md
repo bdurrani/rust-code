@@ -21,4 +21,13 @@ curl http://localhost:8088/parrotify/2
 - `curl http://localhost:8088/parrotify` is not
 the same as `>curl http://localhost:8088/parrotify/`. Why?
 
+### Post example
+```bash
+>curl --header "Content-Type: application/json" -X POST --data @data.json  http://localhost:8088/something/
+```
 
+Or using `httpie`
+
+```bash
+http POST localhost:8088/something/ id=hi name=bob
+```

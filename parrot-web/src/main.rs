@@ -1,13 +1,11 @@
 use actix_web::{
-    client::Client, error, guard, middleware, web, App, Error, HttpRequest, HttpResponse,
-    HttpServer, Result,
+    client::Client, error, middleware, Result,
 };
 use failure::Fail;
 use log::debug;
 
 mod parrotify;
-
-use parrotify::config;
+mod samples;
 
 #[derive(Fail, Debug)]
 #[fail(display = "my error")]
@@ -37,9 +35,8 @@ async fn main() -> std::io::Result<()> {
             // enable logger - always register actix-web Logger middleware last
             .wrap(middleware::Logger::default())
             .data(Client::default())
-            .configure(config)
-            .configure(parrotify::another)
-            .configure(parrotify::async_another)
+            .configure(parrotify::configure)
+            .configure(samples::async_another)
             .route("/", web::get().to(index))
     })
     .bind("127.0.0.1:8088")?

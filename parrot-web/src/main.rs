@@ -5,6 +5,9 @@ use log::debug;
 mod parrotify;
 mod samples;
 
+const BIND_IP: &str = "127.0.0.1";
+const BIND_PORT: &str = "8088";
+
 #[derive(Fail, Debug)]
 #[fail(display = "my error")]
 pub struct MyError {
@@ -28,16 +31,16 @@ async fn main() -> std::io::Result<()> {
     std::env::set_var("RUST_BACKTRACE", "1");
     env_logger::init();
 
+    println!("Starting server on {} on port {}", BIND_IP, BIND_PORT);
     HttpServer::new(|| {
         App::new()
             // enable logger - always register actix-web Logger middleware last
             .wrap(Logger::default())
             .data(Client::default())
             .configure(parrotify::configure)
-            //            .configure(samples::async_another)
             .route("/", web::get().to(index))
     })
-    .bind("127.0.0.1:8088")?
+    .bind(format!("{}:{}", BIND_IP, BIND_PORT))?
     .run()
     .await
 }

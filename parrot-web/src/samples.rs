@@ -4,12 +4,11 @@ use std::collections::HashMap;
 use validator::Validate;
 use validator_derive::Validate;
 
-use actix_web::{
-    client::Client, error, guard, middleware, web, App, Error, HttpRequest, HttpResponse,
-    HttpServer, Result,
-};
+use actix_web::{client::Client, error, web, Error, HttpRequest, HttpResponse, Result};
+
 // this function could be located in different module
 // https://github.com/fairingrey/actix-realworld-example-app/blob/master/src/app/mod.rs
+#[allow(dead_code)]
 pub fn config(cfg: &mut web::ServiceConfig) {
     cfg.service(
         web::resource("/test")
@@ -19,6 +18,7 @@ pub fn config(cfg: &mut web::ServiceConfig) {
 }
 
 /// This could be in another module.
+#[allow(dead_code)]
 pub fn another(cfg: &mut web::ServiceConfig) {
     cfg.service(
         web::scope("/parrotify")
@@ -27,14 +27,17 @@ pub fn another(cfg: &mut web::ServiceConfig) {
     );
 }
 
-async fn index(req: HttpRequest) -> HttpResponse {
+#[allow(dead_code)]
+async fn index(_req: HttpRequest) -> HttpResponse {
     unimplemented!()
 }
 
+#[allow(dead_code)]
 async fn show_users() -> HttpResponse {
     HttpResponse::Ok().body("Show users")
 }
 
+#[allow(dead_code)]
 async fn user_detail(path: web::Path<(u32,)>) -> HttpResponse {
     HttpResponse::Ok().body(format!("User detail: {}", path.0))
 }
@@ -60,6 +63,7 @@ struct HttpBinResponse {
 }
 
 /// validate data, post json to httpbin, get it back in the response body, return deserialized
+#[allow(dead_code)]
 async fn step_x(data: SomeData, client: &Client) -> Result<SomeData, Error> {
     // validate data
     data.validate().map_err(error::ErrorBadRequest)?;
@@ -78,6 +82,7 @@ async fn step_x(data: SomeData, client: &Client) -> Result<SomeData, Error> {
     Ok(body.json)
 }
 
+#[allow(dead_code)]
 async fn create_something(
     some_data: web::Json<SomeData>,
     client: web::Data<Client>,
@@ -95,6 +100,7 @@ async fn create_something(
 }
 
 /// This could be in another module.
+#[allow(dead_code)]
 pub fn async_another(cfg: &mut web::ServiceConfig) {
     cfg.service(web::scope("/something").route("/", web::post().to(create_something)));
 }

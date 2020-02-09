@@ -1,13 +1,10 @@
 //use futures::StreamExt;
 //use serde::{Deserialize, Serialize};
-use std::collections::HashMap;
-use validator::Validate;
-use validator_derive::Validate;
+//use std::collections::HashMap;
+//use validator::Validate;
+//use validator_derive::Validate;
 
-use actix_web::{
-    client::Client, error, guard, middleware, web, App, Error, HttpRequest, HttpResponse,
-    HttpServer, Result,
-};
+use actix_web::{web, HttpRequest, HttpResponse};
 
 pub fn configure(cfg: &mut web::ServiceConfig) {
     cfg.service(
@@ -39,4 +36,3 @@ async fn convert_text_param1(req: HttpRequest) -> HttpResponse {
 //async fn user_detail(path: web::Path<(u32,)>) -> HttpResponse {
 //    HttpResponse::Ok().body(format!("User detail: {}", path.0))
 //}
-

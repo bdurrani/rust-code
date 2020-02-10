@@ -1,17 +1,17 @@
-use std::collections::HashMap;
+//use std::collections::HashMap;
 pub const LETTER_WIDTH: usize = 9;
 pub const LETTER_HEIGHT: usize = 5;
 pub type Letter = [&'static [u8; LETTER_WIDTH]; LETTER_HEIGHT];
 
-pub fn build_map() -> HashMap<char, [&'static [u8; LETTER_WIDTH]; LETTER_HEIGHT]> {
-    let mut encoding = HashMap::new();
-    encoding.insert('a', ENCODED_A);
-    encoding.insert('b', ENCODED_B);
-    encoding.insert('c', ENCODED_C);
-    encoding.insert('d', ENCODED_C);
-
-    return encoding;
-}
+//pub fn build_map() -> HashMap<char, [&'static [u8; LETTER_WIDTH]; LETTER_HEIGHT]> {
+//    let mut encoding = HashMap::new();
+//    encoding.insert('a', ENCODED_A);
+//    encoding.insert('b', ENCODED_B);
+//    encoding.insert('c', ENCODED_C);
+//    encoding.insert('d', ENCODED_C);
+//
+//    return encoding;
+//}
 
 pub const ENCODED_A: [&'static [u8; LETTER_WIDTH]; 5] = [
     b"AABBBBBAA",

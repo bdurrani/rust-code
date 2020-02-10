@@ -1,8 +1,9 @@
 use actix_web::{client::Client, error, Result};
 use failure::Fail;
 use log::debug;
+use parrotify;
 
-mod parrotify;
+mod parrotify_config;
 mod samples;
 
 const BIND_IP: &str = "127.0.0.1";
@@ -31,13 +32,14 @@ async fn main() -> std::io::Result<()> {
     std::env::set_var("RUST_BACKTRACE", "1");
     env_logger::init();
 
+    let _ = parrotify::line::Line::new();
     println!("Starting server on {} on port {}", BIND_IP, BIND_PORT);
     HttpServer::new(|| {
         App::new()
             // enable logger - always register actix-web Logger middleware last
             .wrap(Logger::default())
             .data(Client::default())
-            .configure(parrotify::configure)
+            .configure(parrotify_config::configure)
             .route("/", web::get().to(index))
     })
     .bind(format!("{}:{}", BIND_IP, BIND_PORT))?

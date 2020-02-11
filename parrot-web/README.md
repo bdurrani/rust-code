@@ -18,8 +18,8 @@ curl http://localhost:8088/parrotify/2
 
 ## TODO
 
-- `curl http://localhost:8088/parrotify` is not
-the same as `>curl http://localhost:8088/parrotify/`. Why?
+- Use `serde` to parse the url params
+- integrate `parrotify` library and use in route
 
 ### Post example
 ```bash

@@ -1,7 +1,6 @@
 use actix_web::{client::Client, error, Result};
 use failure::Fail;
 use log::debug;
-use parrotify;
 
 mod parrotify_config;
 mod samples;
@@ -32,7 +31,6 @@ async fn main() -> std::io::Result<()> {
     std::env::set_var("RUST_BACKTRACE", "1");
     env_logger::init();
 
-    let _ = parrotify::line::Line::new();
     println!("Starting server on {} on port {}", BIND_IP, BIND_PORT);
     HttpServer::new(|| {
         App::new()

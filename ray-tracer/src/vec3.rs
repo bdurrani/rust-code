@@ -1,6 +1,5 @@
 use std::fmt;
 use std::ops;
-use std::ops::{Add, Div, Neg, Sub};
 
 #[derive(PartialEq, Debug, Copy, Clone)]
 pub struct Vec3 {
@@ -119,6 +118,20 @@ impl ops::Div<f32> for Vec3 {
     }
 }
 
+impl ops::Index<usize> for Vec3 {
+    type Output = f32;
+
+    fn index(&self, index: usize) -> &Self::Output {
+        &self.e[index]
+    }
+}
+
+impl ops::IndexMut<usize> for Vec3 {
+    fn index_mut(&mut self, i: usize) -> &mut f32 {
+        &mut self.e[i]
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use crate::vec3::Vec3;
@@ -157,5 +170,12 @@ mod tests {
         let expected = Vec3::new(1_f32, 2_f32, 3_f32);
         let actual = Vec3::new(5_f32, 10_f32, 15_f32) / 5_f32;
         assert_eq!(expected, actual);
+    }
+
+    #[test]
+    fn indexing_works() {
+        let expected = 10_f32;
+        let actual = Vec3::new(5_f32, 10_f32, 15_f32);
+        assert_eq!(expected, actual[1]);
     }
 }

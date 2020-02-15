@@ -1,6 +1,6 @@
 use std::fmt;
 use std::ops;
-use std::ops::{Add, Neg, Sub};
+use std::ops::{Add, Div, Neg, Sub};
 
 #[derive(PartialEq, Debug)]
 pub struct Vec3 {
@@ -50,6 +50,10 @@ impl Vec3 {
         self.e[1] *= k;
         self.e[2] *= k;
     }
+
+    pub fn unit_vector(vector: Vec3) -> Vec3 {
+        vector / vector.length()
+    }
 }
 
 impl fmt::Display for Vec3 {
@@ -95,6 +99,26 @@ impl ops::Sub for Vec3 {
     }
 }
 
+impl ops::Div for Vec3 {
+    type Output = Self;
+
+    fn div(self, rhs: Self) -> Self::Output {
+        Vec3::new(
+            self.e[0] / rhs.e[0],
+            self.e[1] / rhs.e[1],
+            self.e[2] / rhs.e[2],
+        )
+    }
+}
+
+impl ops::Div<f32> for Vec3 {
+    type Output = Self;
+
+    fn div(self, rhs: f32) -> Self::Output {
+        Vec3::new(self.e[0] / rhs, self.e[1] / rhs, self.e[2] / rhs)
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use crate::vec3::Vec3;
@@ -111,6 +135,27 @@ mod tests {
     fn addition_works() {
         let expected = Vec3::new(5_f32, 4_f32, 3_f32);
         let actual = Vec3::new(2_f32, 1_f32, 2_f32) + Vec3::new(3_f32, 3_f32, 1_f32);
+        assert_eq!(expected, actual);
+    }
+
+    #[test]
+    fn subtraction_works() {
+        let expected = Vec3::new(-1_f32, -2_f32, 1_f32);
+        let actual = Vec3::new(2_f32, 1_f32, 2_f32) - Vec3::new(3_f32, 3_f32, 1_f32);
+        assert_eq!(expected, actual);
+    }
+
+    #[test]
+    fn division_works() {
+        let expected = Vec3::new(1_f32, 2_f32, 3_f32);
+        let actual = Vec3::new(5_f32, 10_f32, 15_f32) / Vec3::new(5_f32, 5_f32, 5_f32);
+        assert_eq!(expected, actual);
+    }
+
+    #[test]
+    fn division_by_float_works() {
+        let expected = Vec3::new(1_f32, 2_f32, 3_f32);
+        let actual = Vec3::new(5_f32, 10_f32, 15_f32) / 5_f32;
         assert_eq!(expected, actual);
     }
 }

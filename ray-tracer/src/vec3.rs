@@ -1,7 +1,8 @@
 use std::fmt;
 use std::ops;
-use std::ops::Neg;
+use std::ops::{Add, Neg, Sub};
 
+#[derive(PartialEq, Debug)]
 pub struct Vec3 {
     e: [f32; 3],
 }
@@ -42,6 +43,13 @@ impl Vec3 {
     pub fn squared_length(&self) -> f32 {
         (self.e[0] * self.e[0] + self.e[1] * self.e[1] + self.e[2] * self.e[2])
     }
+
+    pub fn make_unit_vector(&mut self) {
+        let k: f32 = 1.0 / self.length();
+        self.e[0] *= k;
+        self.e[1] *= k;
+        self.e[2] *= k;
+    }
 }
 
 impl fmt::Display for Vec3 {
@@ -60,5 +68,49 @@ impl ops::Neg for Vec3 {
 
     fn neg(self) -> Self::Output {
         Vec3::new(self.e[0], self.e[1], self.e[2])
+    }
+}
+
+impl ops::Add for Vec3 {
+    type Output = Vec3;
+
+    fn add(self, rhs: Self) -> Self::Output {
+        Vec3::new(
+            self.e[0] + rhs.e[0],
+            self.e[1] + rhs.e[1],
+            self.e[2] + rhs.e[2],
+        )
+    }
+}
+
+impl ops::Sub for Vec3 {
+    type Output = Vec3;
+
+    fn sub(self, rhs: Self) -> Self::Output {
+        Vec3::new(
+            self.e[0] - rhs.e[0],
+            self.e[1] - rhs.e[1],
+            self.e[2] - rhs.e[2],
+        )
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use crate::vec3::Vec3;
+
+    #[test]
+    fn equality_works() {
+        assert_eq!(
+            Vec3::new(1_f32, 2_f32, 3_f32),
+            Vec3::new(1_f32, 2_f32, 3_f32)
+        );
+    }
+
+    #[test]
+    fn addition_works() {
+        let expected = Vec3::new(5_f32, 4_f32, 3_f32);
+        let actual = Vec3::new(2_f32, 1_f32, 2_f32) + Vec3::new(3_f32, 3_f32, 1_f32);
+        assert_eq!(expected, actual);
     }
 }

@@ -31,7 +31,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b8a33d90-7a67-4e24-a8c5-82e791bd28ea" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/vec3.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vec3.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/vec3.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +110,8 @@
       <option name="presentableId" value="Default" />
       <updated>1581647107301</updated>
       <workItem from="1581647114149" duration="7536000" />
-      <workItem from="1581728431558" duration="4154000" />
+      <workItem from="1581728431558" duration="4787000" />
+      <workItem from="1581749135019" duration="4845000" />
     </task>
     <servers />
   </component>
@@ -132,10 +134,10 @@
       <screen x="0" y="0" width="1366" height="735" />
     </state>
     <state x="723" y="169" width="528" height="397" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.735@0.0.1366.735" timestamp="1581647566745" />
-    <state x="799" y="86" width="376" height="563" key="#com.intellij.ide.util.MemberChooser" timestamp="1581732123052">
+    <state x="799" y="86" width="376" height="563" key="#com.intellij.ide.util.MemberChooser" timestamp="1581751094346">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
-    <state x="799" y="86" width="376" height="563" key="#com.intellij.ide.util.MemberChooser/0.0.1366.735@0.0.1366.735" timestamp="1581732123052" />
+    <state x="799" y="86" width="376" height="563" key="#com.intellij.ide.util.MemberChooser/0.0.1366.735@0.0.1366.735" timestamp="1581751094346" />
     <state width="684" height="159" key="GridCell.Tab.0.bottom" timestamp="1581726708189">
       <screen x="0" y="0" width="1366" height="735" />
     </state>

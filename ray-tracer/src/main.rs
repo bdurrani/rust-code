@@ -22,10 +22,11 @@ fn main() {
     let origin = Vec3::new(0.0, 0.0, 0.0);
     for j in (0..ny).rev() {
         for i in 0..nx {
-            let r: f32 = i as f32 / nx as f32;
-            let g: f32 = j as f32 / ny as f32;
+            let u: f32 = i as f32 / nx as f32;
+            let v: f32 = j as f32 / ny as f32;
             let b: f32 = 0.2;
-            let col: Vec3 = Vec3::new(r, g, b);
+            let r: Ray = Ray::new(origin, lower_left_corner + u * horizontal + v * vertical);
+            let col: Vec3 = color(&r);
             let ir: u32 = (255.99 * col[0]) as u32;
             let ig: u32 = (255.99 * col[1]) as u32;
             let ib: u32 = (255.99 * col[2]) as u32;

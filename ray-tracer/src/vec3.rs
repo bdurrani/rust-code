@@ -86,6 +86,14 @@ impl ops::Add for Vec3 {
     }
 }
 
+impl ops::Add<f32> for Vec3 {
+    type Output = Vec3;
+
+    fn add(self, rhs: f32) -> Self::Output {
+        Vec3::new(self.e[0] + rhs, self.e[1] + rhs, self.e[2] + rhs)
+    }
+}
+
 impl ops::Sub for Vec3 {
     type Output = Vec3;
 
@@ -129,6 +137,22 @@ impl ops::Index<usize> for Vec3 {
 impl ops::IndexMut<usize> for Vec3 {
     fn index_mut(&mut self, i: usize) -> &mut f32 {
         &mut self.e[i]
+    }
+}
+
+impl ops::Mul<f32> for Vec3 {
+    type Output = Self;
+
+    fn mul(self, rhs: f32) -> Self::Output {
+        Vec3::new(self.e[0] * rhs, self.e[1] * rhs, self.e[2] * rhs)
+    }
+}
+
+impl ops::Mul<Vec3> for f32 {
+    type Output = Vec3;
+
+    fn mul(self, rhs: Vec3) -> Self::Output {
+        rhs * self
     }
 }
 
@@ -177,5 +201,13 @@ mod tests {
         let expected = 10_f32;
         let actual = Vec3::new(5_f32, 10_f32, 15_f32);
         assert_eq!(expected, actual[1]);
+    }
+
+    #[test]
+    fn multiplication_works() {
+        let input = Vec3::new(1_f32, 2_f32, 3_f32);
+        let actual = Vec3::new(2_f32, 4_f32, 6_f32);
+        assert_eq!(actual, 2_f32 * input);
+        assert_eq!(actual, input * 2_f32);
     }
 }

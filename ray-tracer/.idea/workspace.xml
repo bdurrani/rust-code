@@ -34,6 +34,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/out.ppm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vec3.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/vec3.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,6 +117,7 @@
       <workItem from="1581783447081" duration="3300000" />
       <workItem from="1581808954434" duration="2403000" />
       <workItem from="1581813749382" duration="5457000" />
+      <workItem from="1581894084695" duration="3639000" />
     </task>
     <servers />
   </component>

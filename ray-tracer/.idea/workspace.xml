@@ -32,9 +32,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b8a33d90-7a67-4e24-a8c5-82e791bd28ea" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out.ppm" beforeDir="false" afterPath="$PROJECT_DIR$/out.ppm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vec3.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/vec3.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +62,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -117,7 +116,7 @@
       <workItem from="1581783447081" duration="3300000" />
       <workItem from="1581808954434" duration="2403000" />
       <workItem from="1581813749382" duration="5457000" />
-      <workItem from="1581894084695" duration="3639000" />
+      <workItem from="1581894084695" duration="7823000" />
     </task>
     <servers />
   </component>
@@ -140,10 +139,10 @@
       <screen x="0" y="0" width="1366" height="735" />
     </state>
     <state x="723" y="169" width="528" height="397" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.735@0.0.1366.735" timestamp="1581647566745" />
-    <state x="799" y="86" width="376" height="563" key="#com.intellij.ide.util.MemberChooser" timestamp="1581815872470">
+    <state x="799" y="86" width="376" height="563" key="#com.intellij.ide.util.MemberChooser" timestamp="1581901238747">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
-    <state x="799" y="86" width="376" height="563" key="#com.intellij.ide.util.MemberChooser/0.0.1366.735@0.0.1366.735" timestamp="1581815872470" />
+    <state x="799" y="86" width="376" height="563" key="#com.intellij.ide.util.MemberChooser/0.0.1366.735@0.0.1366.735" timestamp="1581901238747" />
     <state width="684" height="159" key="GridCell.Tab.0.bottom" timestamp="1581726708189">
       <screen x="0" y="0" width="1366" height="735" />
     </state>

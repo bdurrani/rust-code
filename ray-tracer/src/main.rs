@@ -2,6 +2,7 @@ use crate::vec3::Vec3;
 use std::f32;
 
 mod hittable;
+mod hittableList;
 mod ray;
 mod sphere;
 mod vec3;

@@ -31,10 +31,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b8a33d90-7a67-4e24-a8c5-82e791bd28ea" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/hittable.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/hittable.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hittableList.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/hittableList.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ray.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/ray.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sphere.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/sphere.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -145,10 +146,15 @@
       <screen x="0" y="0" width="1366" height="735" />
     </state>
     <state x="723" y="169" width="528" height="397" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.735@0.0.1366.735" timestamp="1581647566745" />
-    <state x="799" y="86" width="376" height="563" key="#com.intellij.ide.util.MemberChooser" timestamp="1581901238747">
-      <screen x="0" y="0" width="1366" height="735" />
+    <state x="1497" y="164" width="376" height="563" key="#com.intellij.ide.util.MemberChooser" timestamp="1582254163121">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="799" y="86" width="376" height="563" key="#com.intellij.ide.util.MemberChooser/0.0.1366.735@0.0.1366.735" timestamp="1581901238747" />
+    <state x="1497" y="164" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400/-1920.0.1920.1040/3840.0.2560.1400@0.0.2560.1400" timestamp="1582254163121" />
+    <state x="1003" y="394" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1582255627074">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1003" y="394" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.2560.1400/-1920.0.1920.1040/3840.0.2560.1400@0.0.2560.1400" timestamp="1582255627074" />
     <state width="684" height="159" key="GridCell.Tab.0.bottom" timestamp="1581726708189">
       <screen x="0" y="0" width="1366" height="735" />
     </state>

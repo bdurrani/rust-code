@@ -1,4 +1,5 @@
 use crate::vec3::Vec3;
+use hittable::{HitRecord, Hittable};
 use std::f32;
 
 mod hittable;
@@ -9,10 +10,16 @@ mod vec3;
 
 use ray::Ray;
 
-fn color(r: &Ray) -> Vec3 {
+fn color(r: &Ray, world: &Hittable) -> Vec3 {
+    let mut rec = HitRecord::new();
+    if world.hit(&r, 0.0, f32::MAX, &mut rec) {
+        // TODO: Finish this
+    }
     let t = hit_sphere(&Vec3::new(0.0, 0.0, -1.0), 0.5, r);
     if t > 0.0 {
-        let N: Vec3 = Vec3::unit_vector(r.point_at_parameter(t) - Vec3::new(0.0, 0.0, 1.0));
+        let N: Vec3 = Vec3::unit_vector(
+            r.point_at_parameter(t) - Vec3::new(0.0, 0.0, 1.0),
+        );
         return 0.5 * Vec3::new(N.x() + 1.0, N.y() + 1.0, N.z() + 1.0);
     }
     let unit_direction: Vec3 = Vec3::unit_vector(r.direction());
@@ -46,7 +53,10 @@ fn main() {
             let u: f32 = i as f32 / nx as f32;
             let v: f32 = j as f32 / ny as f32;
             let b: f32 = 0.2;
-            let r: Ray = Ray::new(origin, lower_left_corner + u * horizontal + v * vertical);
+            let r: Ray = Ray::new(
+                origin,
+                lower_left_corner + u * horizontal + v * vertical,
+            );
             let col: Vec3 = color(&r);
             let ir: u32 = (255.99 * col[0]) as u32;
             let ig: u32 = (255.99 * col[1]) as u32;

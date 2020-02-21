@@ -17,25 +17,31 @@ impl Sphere {
 }
 
 impl Hittable for Sphere {
-    fn hit(&self, r: &Ray, t_min: f32, t_max: f32, rec: &mut HitRecord) -> bool {
-        let oc = r.origin() - *center;
+    fn hit(
+        &self,
+        r: &Ray,
+        t_min: f32,
+        t_max: f32,
+        rec: &mut HitRecord,
+    ) -> bool {
+        let oc = r.origin() - self.center;
         let a = Vec3::dot(&r.direction(), &r.direction());
         let b = 2.0 * Vec3::dot(&oc, &r.direction());
-        let c = Vec3::dot(&oc, &oc) - radius * radius;
+        let c = Vec3::dot(&oc, &oc) - self.radius * self.radius;
         let discriminant = b * b - a * c;
         if discriminant > 0.0 {
             let temp = (-b - f32::sqrt(discriminant)) / a;
             if temp < t_max && temp > t_min {
                 rec.t = temp;
                 rec.p = r.point_at_parameter(rec.t);
-                rec.normal = (rec.p - center) / self.radius;
+                rec.normal = (rec.p - self.center) / self.radius;
                 return true;
             }
             let temp = (-b + f32::sqrt(discriminant)) / a;
             if temp < t_max && temp > t_min {
                 rec.t = temp;
                 rec.p = r.point_at_parameter(rec.t);
-                rec.normal = (rec.p - center) / self.radius;
+                rec.normal = (rec.p - self.center) / self.radius;
                 return true;
             }
         }

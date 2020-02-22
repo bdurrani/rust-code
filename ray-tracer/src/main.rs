@@ -12,7 +12,7 @@ mod vec3;
 
 use ray::Ray;
 
-fn color(r: &Ray, world: &Hittable) -> Vec3 {
+fn color(r: &Ray, world: &dyn Hittable) -> Vec3 {
     let mut rec = HitRecord::new();
     return if world.hit(&r, 0.0, f32::MAX, &mut rec) {
         0.5 * Vec3::new(
@@ -51,9 +51,9 @@ fn main() {
             );
             let p = r.point_at_parameter(2.0);
             let col: Vec3 = color(&r, &list);
-            let ir: u32 = (255.99 * col[0]) as u32;
-            let ig: u32 = (255.99 * col[1]) as u32;
-            let ib: u32 = (255.99 * col[2]) as u32;
+            let ir: i32 = (255.99 * col[0]) as i32;
+            let ig: i32 = (255.99 * col[1]) as i32;
+            let ib: i32 = (255.99 * col[2]) as i32;
             println!("{} {} {}", ir, ig, ib);
         }
     }

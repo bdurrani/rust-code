@@ -67,6 +67,7 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cf.first.check.clang-format" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -119,6 +120,8 @@
       <workItem from="1581808954434" duration="2403000" />
       <workItem from="1581813749382" duration="5457000" />
       <workItem from="1581894084695" duration="7823000" />
+      <workItem from="1582339343821" duration="320000" />
+      <workItem from="1582339754480" duration="1554000" />
     </task>
     <servers />
   </component>
@@ -130,15 +133,17 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
   </component>
   <component name="WindowStateProjectService">
+    <state x="320" y="79" width="635" height="605" key="#Images" timestamp="1582340017301">
+      <screen x="0" y="0" width="1280" height="767" />
+    </state>
+    <state x="320" y="79" width="635" height="605" key="#Images/0.0.1280.767@0.0.1280.767" timestamp="1582340017301" />
     <state x="723" y="169" width="528" height="397" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1581647566745">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
@@ -152,25 +157,57 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1003" y="394" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.2560.1400/-1920.0.1920.1040/3840.0.2560.1400@0.0.2560.1400" timestamp="1582255627074" />
-    <state width="684" height="159" key="GridCell.Tab.0.bottom" timestamp="1581726708189">
-      <screen x="0" y="0" width="1366" height="735" />
+    <state width="1212" height="215" key="GridCell.Tab.0.bottom" timestamp="1582343068020">
+      <screen x="0" y="0" width="1280" height="767" />
     </state>
+    <state width="1212" height="215" key="GridCell.Tab.0.bottom/0.0.1280.767@0.0.1280.767" timestamp="1582343068020" />
     <state width="684" height="159" key="GridCell.Tab.0.bottom/0.0.1366.735@0.0.1366.735" timestamp="1581726708189" />
-    <state width="684" height="159" key="GridCell.Tab.0.center" timestamp="1581726708188">
-      <screen x="0" y="0" width="1366" height="735" />
+    <state width="1212" height="215" key="GridCell.Tab.0.center" timestamp="1582343068019">
+      <screen x="0" y="0" width="1280" height="767" />
     </state>
+    <state width="1212" height="215" key="GridCell.Tab.0.center/0.0.1280.767@0.0.1280.767" timestamp="1582343068019" />
     <state width="684" height="159" key="GridCell.Tab.0.center/0.0.1366.735@0.0.1366.735" timestamp="1581726708188" />
-    <state width="684" height="159" key="GridCell.Tab.0.left" timestamp="1581726708187">
-      <screen x="0" y="0" width="1366" height="735" />
+    <state width="1212" height="215" key="GridCell.Tab.0.left" timestamp="1582343068018">
+      <screen x="0" y="0" width="1280" height="767" />
     </state>
+    <state width="1212" height="215" key="GridCell.Tab.0.left/0.0.1280.767@0.0.1280.767" timestamp="1582343068018" />
     <state width="684" height="159" key="GridCell.Tab.0.left/0.0.1366.735@0.0.1366.735" timestamp="1581726708187" />
-    <state width="684" height="159" key="GridCell.Tab.0.right" timestamp="1581726708188">
-      <screen x="0" y="0" width="1366" height="735" />
+    <state width="1212" height="215" key="GridCell.Tab.0.right" timestamp="1582343068019">
+      <screen x="0" y="0" width="1280" height="767" />
     </state>
+    <state width="1212" height="215" key="GridCell.Tab.0.right/0.0.1280.767@0.0.1280.767" timestamp="1582343068019" />
     <state width="684" height="159" key="GridCell.Tab.0.right/0.0.1366.735@0.0.1366.735" timestamp="1581726708188" />
+    <state width="1212" height="215" key="GridCell.Tab.1.bottom" timestamp="1582343068022">
+      <screen x="0" y="0" width="1280" height="767" />
+    </state>
+    <state width="1212" height="215" key="GridCell.Tab.1.bottom/0.0.1280.767@0.0.1280.767" timestamp="1582343068022" />
+    <state width="1212" height="215" key="GridCell.Tab.1.center" timestamp="1582343068021">
+      <screen x="0" y="0" width="1280" height="767" />
+    </state>
+    <state width="1212" height="215" key="GridCell.Tab.1.center/0.0.1280.767@0.0.1280.767" timestamp="1582343068021" />
+    <state width="1212" height="215" key="GridCell.Tab.1.left" timestamp="1582343068020">
+      <screen x="0" y="0" width="1280" height="767" />
+    </state>
+    <state width="1212" height="215" key="GridCell.Tab.1.left/0.0.1280.767@0.0.1280.767" timestamp="1582343068020" />
+    <state width="1212" height="215" key="GridCell.Tab.1.right" timestamp="1582343068021">
+      <screen x="0" y="0" width="1280" height="767" />
+    </state>
+    <state width="1212" height="215" key="GridCell.Tab.1.right/0.0.1280.767@0.0.1280.767" timestamp="1582343068021" />
     <state x="187" y="3" width="992" height="731" key="SettingsEditor" timestamp="1581730365806">
       <screen x="0" y="0" width="1366" height="735" />
     </state>
     <state x="187" y="3" width="992" height="731" key="SettingsEditor/0.0.1366.735@0.0.1366.735" timestamp="1581730365806" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <condition expression="ir ==4294967267" language="Rust" />
+          <url>file://$PROJECT_DIR$/src/main.rs</url>
+          <line>56</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

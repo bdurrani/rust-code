@@ -7,6 +7,7 @@ use std::env;
 use dotenv::dotenv;
 
 mod parrotify_config;
+mod parrotify;
 mod samples;
 
 const BIND_IP: &str = "127.0.0.1";

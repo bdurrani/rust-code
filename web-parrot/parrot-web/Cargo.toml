@@ -20,3 +20,4 @@ validator = "0.10.0"
 validator_derive = "0.10.0"
 parrotify= { path = "../parrotify" }
 listenfd = "0.3.3"
+dotenv = "0.15.0"

@@ -1,7 +1,10 @@
+#[macro_use] extern crate log;
+
 use actix_web::{client::Client, error, Result};
 use failure::Fail;
-use log::debug;
 use listenfd::ListenFd;
+use std::env;
+use dotenv::dotenv;
 
 mod parrotify_config;
 mod samples;
@@ -27,13 +30,12 @@ async fn index() -> Result<&'static str, MyError> {
 #[actix_rt::main]
 async fn main() -> std::io::Result<()> {
     use actix_web::{middleware::Logger, web, App, HttpServer};
-
-    let mut listenfd = ListenFd::from_env();
-    std::env::set_var("RUST_LOG", "my_errors=debug,actix_web=debug");
-    std::env::set_var("RUST_BACKTRACE", "1");
+    dotenv().ok();
     env_logger::init();
 
-    println!("Starting server on {} on port {}", BIND_IP, BIND_PORT);
+    let mut listenfd = ListenFd::from_env();
+
+    info!("Starting server on {} on port {}", BIND_IP, BIND_PORT);
     let mut server = HttpServer::new(|| {
         App::new()
             // enable logger - always register actix-web Logger middleware last

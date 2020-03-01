@@ -28,4 +28,3 @@ See the `minigrep` folder for VSCode settings
 cargo new my-app --vcs none
 ```
 
-## Failing CI

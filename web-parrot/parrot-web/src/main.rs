@@ -1,6 +1,7 @@
 use actix_web::{client::Client, error, Result};
 use failure::Fail;
 use log::debug;
+use listenfd::ListenFd;
 
 mod parrotify_config;
 mod samples;
@@ -27,20 +28,25 @@ async fn index() -> Result<&'static str, MyError> {
 async fn main() -> std::io::Result<()> {
     use actix_web::{middleware::Logger, web, App, HttpServer};
 
+    let mut listenfd = ListenFd::from_env();
     std::env::set_var("RUST_LOG", "my_errors=debug,actix_web=debug");
     std::env::set_var("RUST_BACKTRACE", "1");
     env_logger::init();
 
     println!("Starting server on {} on port {}", BIND_IP, BIND_PORT);
-    HttpServer::new(|| {
+    let mut server = HttpServer::new(|| {
         App::new()
             // enable logger - always register actix-web Logger middleware last
             .wrap(Logger::default())
             .data(Client::default())
             .configure(parrotify_config::configure)
             .route("/", web::get().to(index))
-    })
-    .bind(format!("{}:{}", BIND_IP, BIND_PORT))?
-    .run()
-    .await
+    });
+
+    server = match listenfd.take_tcp_listener(0)? {
+        Some(listener) => server.listen(listener)?,
+        None => server.bind(format!("{}:{}", BIND_IP, BIND_PORT))?,
+    };
+
+    server.run().await
 }

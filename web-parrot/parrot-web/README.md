@@ -46,3 +46,13 @@ Or [this](https://dev.to/werner/practical-rust-web-development-api-rest-29g1).
 
 https://expressjs.com/en/advanced/best-practice-security.html
 
+## Running in dev mode
+
+Install the required modules and start the monitoring
+
+```bash
+cargo install systemfd cargo-watch
+systemfd --no-pid -s http::8088 -- cargo watch -x run
+```
+
+Without dev mode, just use `cargo run`

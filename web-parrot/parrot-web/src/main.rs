@@ -42,7 +42,8 @@ async fn main() -> std::io::Result<()> {
             // enable logger - always register actix-web Logger middleware last
             .wrap(Logger::default())
             .data(Client::default())
-            .configure(parrotify_config::configure)
+            // .configure(parrotify_config::configure)
+            .configure(parrotify::init_routes)
             .route("/", web::get().to(index))
     });
 

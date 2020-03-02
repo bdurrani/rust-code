@@ -12,13 +12,20 @@ use serde_json::json;
 //     );
 // }
 
-#[get("/parrotify/{content}")]
-async fn convert_with_defaults()-> impl Responder{
-     HttpResponse::Ok().json("hi" )
+#[get("/{content}")]
+async fn convert_with_defaults(req: HttpRequest)-> impl Responder{
+
+    let content = req.match_info().get("content").unwrap();
+    info!("{}", content);
+    HttpResponse::Ok().json("hi" )
 }
 
 pub fn init_routes(cfg: &mut web::ServiceConfig) {
-    cfg.service(convert_with_defaults);
+    // Use a scope here to avoid duplicating route information.
+    cfg.service(
+        web::scope("/parrotify")
+            .service(convert_with_defaults)
+    );
 }
 
 // async fn convert_text(req: HttpRequest) -> HttpResponse {

@@ -13,11 +13,18 @@ use serde_json::json;
 // }
 
 #[get("/{content}")]
-async fn convert_with_defaults(req: HttpRequest)-> impl Responder{
+// async fn convert_with_defaults(req: HttpRequest)-> impl Responder{
+async fn convert_with_defaults(content: web::Path<String>)-> impl Responder{
 
-    let content = req.match_info().get("content").unwrap();
-    info!("{}", content);
-    HttpResponse::Ok().json("hi" )
+    // let content = req.match_info().get("content").unwrap();
+    let mut line = parrotify::line::Line::new();
+
+    let v1 = content.to_string();
+    for item in v1.chars() {
+        line.add_letter(&item);
+    }
+    line.replace_a(&"-".chars().nth(0).unwrap());
+    HttpResponse::Ok().body(format!("{}", line))
 }
 
 pub fn init_routes(cfg: &mut web::ServiceConfig) {

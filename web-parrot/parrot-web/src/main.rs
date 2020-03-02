@@ -10,8 +10,6 @@ mod parrotify_config;
 mod parrotify;
 mod samples;
 
-const BIND_IP: &str = "127.0.0.1";
-const BIND_PORT: &str = "8088";
 
 #[derive(Fail, Debug)]
 #[fail(display = "my error")]
@@ -34,9 +32,11 @@ async fn main() -> std::io::Result<()> {
     dotenv().ok();
     env_logger::init();
 
+    let ip = env::var("HOST").unwrap();
+    let port = env::var("PORT").unwrap();
     let mut listenfd = ListenFd::from_env();
 
-    info!("Starting server on {} on port {}", BIND_IP, BIND_PORT);
+    info!("Starting server on {} on port {}", ip, port);
     let mut server = HttpServer::new(|| {
         App::new()
             // enable logger - always register actix-web Logger middleware last
@@ -49,7 +49,7 @@ async fn main() -> std::io::Result<()> {
 
     server = match listenfd.take_tcp_listener(0)? {
         Some(listener) => server.listen(listener)?,
-        None => server.bind(format!("{}:{}", BIND_IP, BIND_PORT))?,
+        None => server.bind(format!("{}:{}", ip, port))?,
     };
 
     server.run().await

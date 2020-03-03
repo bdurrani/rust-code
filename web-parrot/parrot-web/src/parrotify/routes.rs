@@ -13,7 +13,6 @@ use serde_json::json;
 // }
 
 #[get("/{content}")]
-// async fn convert_with_defaults(req: HttpRequest)-> impl Responder{
 async fn convert_with_defaults(content: web::Path<String>)-> impl Responder{
 
     // let content = req.match_info().get("content").unwrap();
@@ -32,6 +31,7 @@ pub fn init_routes(cfg: &mut web::ServiceConfig) {
     cfg.service(
         web::scope("/parrotify")
             .service(convert_with_defaults)
+            .service(convert_with_param1)
     );
 }
 
@@ -59,9 +59,12 @@ pub fn init_routes(cfg: &mut web::ServiceConfig) {
 //     HttpResponse::Ok().body(format!("{}", line))
 // }
 //
-// async fn convert_text_param1(info: web::Path<(String, String)>) -> HttpResponse {
-//     let v1 = info.0.to_string(); //req.match_info().get("text").unwrap().to_string();
-//     let v2 = info.1.to_string(); //req.match_info().query("repl1");
-//     println!("v1 {:?} v2 {:?}", v1, v2);
-//     HttpResponse::Ok().body(format!("{}:{}", v1, v2))
-// }
+
+#[get("/{content}/{param1}")]
+async fn convert_with_param1(info: web::Path<(String, String)>) -> HttpResponse {
+    let v1 = info.0.to_string(); //req.match_info().get("text").unwrap().to_string();
+    let v2 = info.1.to_string(); //req.match_info().query("repl1");
+    let mut line = parrotify::line::Line::new();
+    info!("v1 {:?} v2 {:?}", v1, v2);
+    HttpResponse::Ok().body(format!("{}:{}", v1, v2))
+}

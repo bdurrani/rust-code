@@ -1,6 +1,0 @@
-[workspace]
-
-members=[
-"parrot-web",
-"parrotify",
-]

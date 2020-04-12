@@ -37,7 +37,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="org.rust.cargo.project.model.PROJECT_DISCOVERY" value="true" />
-    <property name="settings.editor.selected.configurable" value="language.rust.rustfmt" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RunManager">
     <configuration name="Run sss" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
@@ -86,25 +86,29 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="917" y="415" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.2560.1400/-1920.0.1920.1040/3840.0.2560.1400@0.0.2560.1400" timestamp="1586480913590" />
-    <state width="1642" height="283" key="GridCell.Tab.0.bottom" timestamp="1586610806847">
+    <state width="1642" height="283" key="GridCell.Tab.0.bottom" timestamp="1586661487238">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1642" height="283" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1920.0.1920.1040/3840.0.2560.1400@0.0.2560.1400" timestamp="1586610806847" />
-    <state width="1642" height="283" key="GridCell.Tab.0.center" timestamp="1586610806847">
+    <state width="1642" height="283" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1920.0.1920.1040/3840.0.2560.1400@0.0.2560.1400" timestamp="1586661487238" />
+    <state width="1642" height="283" key="GridCell.Tab.0.center" timestamp="1586661487237">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1642" height="283" key="GridCell.Tab.0.center/0.0.2560.1400/-1920.0.1920.1040/3840.0.2560.1400@0.0.2560.1400" timestamp="1586610806847" />
-    <state width="1642" height="283" key="GridCell.Tab.0.left" timestamp="1586610806847">
+    <state width="1642" height="283" key="GridCell.Tab.0.center/0.0.2560.1400/-1920.0.1920.1040/3840.0.2560.1400@0.0.2560.1400" timestamp="1586661487237" />
+    <state width="1642" height="283" key="GridCell.Tab.0.left" timestamp="1586661487237">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1642" height="283" key="GridCell.Tab.0.left/0.0.2560.1400/-1920.0.1920.1040/3840.0.2560.1400@0.0.2560.1400" timestamp="1586610806847" />
-    <state width="1642" height="283" key="GridCell.Tab.0.right" timestamp="1586610806847">
+    <state width="1642" height="283" key="GridCell.Tab.0.left/0.0.2560.1400/-1920.0.1920.1040/3840.0.2560.1400@0.0.2560.1400" timestamp="1586661487237" />
+    <state width="1642" height="283" key="GridCell.Tab.0.right" timestamp="1586661487238">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1642" height="283" key="GridCell.Tab.0.right/0.0.2560.1400/-1920.0.1920.1040/3840.0.2560.1400@0.0.2560.1400" timestamp="1586610806847" />
-    <state x="738" y="323" key="SettingsEditor" timestamp="1586613154465">
+    <state width="1642" height="283" key="GridCell.Tab.0.right/0.0.2560.1400/-1920.0.1920.1040/3840.0.2560.1400@0.0.2560.1400" timestamp="1586661487238" />
+    <state x="738" y="323" key="SettingsEditor" timestamp="1586658150316">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="738" y="323" key="SettingsEditor/0.0.2560.1400/-1920.0.1920.1040/3840.0.2560.1400@0.0.2560.1400" timestamp="1586613154465" />
+    <state x="738" y="323" key="SettingsEditor/0.0.2560.1400/-1920.0.1920.1040/3840.0.2560.1400@0.0.2560.1400" timestamp="1586658150316" />
+    <state x="507" y="247" width="672" height="678" key="search.everywhere.popup" timestamp="1586661310001">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="507" y="247" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400/-1920.0.1920.1040/3840.0.2560.1400@0.0.2560.1400" timestamp="1586661310001" />
   </component>
 </project>
